@@ -1,0 +1,11 @@
+/* TEAM */
+
+Master: Jordan LEFEBVRE.
+Location: Aix en provence, France
+
+/* SITE */
+                            
+Last update: 2013/09/01
+Standards: HTML5, CSS3,..
+Components: Modernizr, jQuery, etc.
+Software: Eclipse PDT, Photoshop CS6

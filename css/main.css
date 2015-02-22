@@ -1,0 +1,442 @@
+/* Global */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    /*color: #8a8683;*/
+    background-color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+}
+
+a:link {
+    color: #f68f67;
+    text-decoration: none;
+}
+
+a:active {
+    color: #f68f67;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #bde2df;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #f68f67;
+    text-decoration: none;
+}
+
+/* Navigation */
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background-color: #2F2F2F;
+    z-index: 100;
+}
+
+.logo a {
+    color: #ffffff;
+    font-size: 75%;
+}
+
+.logo {
+    margin: 0;
+    text-align: center;
+}
+
+.experience {
+    padding-top: 10px;
+}
+
+.technique {
+    padding-left: 40px;
+}
+
+.technique p {
+    padding-bottom: 0px;
+}
+
+.technique ul {
+    padding-top: 0;
+}
+
+#nav {
+    text-align: right;
+    margin: 30px 0 0 0;
+}
+
+.navigation {
+    float: right;
+    list-style: none;
+    margin: 0;
+}
+
+.navigation li {
+    float: left;
+    padding: 0 0 0 50px;
+}
+
+.navigation li:hover {
+    cursor: pointer;
+    color: #a9d3d0;
+}
+
+.navigation .active {
+    cursor: pointer;
+    color: #f68f67;
+    font-weight: bold;
+}
+
+#main span {
+    font-weight: bold;
+}
+
+.btn {
+    margin: 20px 0;
+    padding: 15px 30px;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f68f67;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+}
+
+.btn:link {
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #df6c3f;
+    color: #ffffff;
+}
+
+.btn:active {
+    background-color: #bde2df;
+    color: #ffffff;
+}
+
+.btn:visited {
+    color: #ffffff;
+}
+
+#what {
+    text-align: justify;
+}
+
+#what span {
+    font-size: 1.5em;
+}
+
+/* General Slides */
+
+.slide {
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 100px 0;
+    border-bottom: 1px solid #2F2F2F;
+}
+
+.slidePre {
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 55px 0 0 0;
+}
+
+/* Slide 0 */
+
+#slide0 {
+    background-color: #2F2F2F;
+    color: #ffffff;
+}
+
+/* Slide 1 & 4 */
+
+#slide1, #slide4 {
+    background-color: #fff;
+    color: #2F2F2F;
+}
+
+#slide1 h2, #slide4 h2 {
+    font-size: 2em;
+    color: #486ABA;
+    line-height: 0px;
+    padding-bottom: 20px;
+    font-weight: 400;
+}
+
+#slide1 h4, #slide4 h4 {
+    color: #486ABA;
+    font-weight: 400;
+}
+
+/* Slide 2 */
+
+#slide2 {
+    /*background-image: url('../images/footprints.png');*/
+    background-color: #ffffff;
+    color: #8a8683;
+}
+
+#slide2 h2 {
+    font-size: 2em;
+    color: #0A7EFC;
+    line-height: 0px;
+    padding-bottom: 20px;
+    font-weight: 400;
+}
+
+#slide2 h4 {
+    color: #0A7EFC;
+    font-weight: 400;
+}
+
+/* Slide 3 */
+
+#slide3 {
+    background-color: #fff;
+    color: #2B343D;
+}
+
+#slide3 h2 {
+    font-size: 2em;
+    color: #4CBADD;
+    line-height: 0px;
+    padding-bottom: 20px;
+    font-weight: 400;
+}
+
+#slide3 h4 {
+    color: #4CBADD;
+    font-weight: 400;
+}
+
+/* Slide 5 */
+
+#slide5 {
+    background-color: #ffffff;
+    color: #9D9D9F;
+}
+
+#slide5 h1 {
+    font-size: 3.8em;
+    letter-spacing: -3px;
+    line-height: 0px;
+    color: #F4901D;
+    font-weight: 700;
+}
+
+#slide5 h2 {
+    font-size: 2em;
+    color: #F4901D;
+    line-height: 0px;
+    padding-bottom: 20px;
+    font-weight: 400;
+}
+
+#slide5 h4 {
+    color: #F4901D;
+    font-weight: 400;
+}
+
+/* Slide 6 */
+
+#slideContact {
+    /*background-image: url('../images/sunglasses.png');*/
+    background-color: #2F2F2F;
+    color: #ffffff;
+}
+
+#push, #footer {
+    height: 250px;
+}
+
+.footer {
+    background-color: #4d4d4d;
+}
+
+.slideAutre {
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 25px 0;
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+
+    #logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    #nav {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .navigation {
+        width: 100%;
+        float: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navigation li {
+        float: left;
+        width: 25%;
+        padding: 0;
+    }
+
+    .navigation li.download {
+        display: none;
+    }
+
+    #main {
+        width: 100%;
+        text-align: center;
+    }
+
+    #what {
+        width: 100%;
+        text-align: justify;
+    }
+
+    #decorative {
+        display: none;
+    }
+
+    .slide {
+        background-attachment: fixed;
+        width: 100%;
+        position: relative;
+        padding: 150px 0;
+    }
+
+    #slide1 h1 {
+        line-height: 0em;
+    }
+
+    #slide1 h2 {
+        line-height: 0em;
+    }
+
+    #slide2 h1 {
+        line-height: 1em;
+    }
+
+    #slide2 h2 {
+        line-height: 1em;
+    }
+
+    #slide3 h1 {
+        line-height: 0em;
+    }
+
+    #slide3 h2 {
+        line-height: 1.2em;
+    }
+
+    #slide4 h1 {
+        line-height: 1em;
+    }
+
+    #slide4 h2 {
+        line-height: 1em;
+    }
+
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+
+    .csswinner {
+        display: none;
+    }
+
+    .cssdesign {
+        display: none;
+    }
+
+    #logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    #nav {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .navigation {
+        width: 100%;
+        float: left;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navigation li {
+        float: left;
+        width: 25%;
+    }
+
+    .slide {
+        background-attachment: fixed;
+        width: 100%;
+        position: relative;
+        padding: 150px 0;
+    }
+
+    #slide1 h1 {
+        line-height: 1em;
+    }
+
+    #slide1 h2 {
+        line-height: 1em;
+    }
+
+    #slide2 h1 {
+        line-height: 1em;
+    }
+
+    #slide2 h2 {
+        line-height: 1em;
+    }
+
+    #slide3 h1 {
+        line-height: 1em;
+    }
+
+    #slide3 h2 {
+        line-height: 1em;
+    }
+
+    #slide4 h1 {
+        line-height: 1em;
+    }
+
+    #slide4 h2 {
+        line-height: 1em;
+    }
+
+}
+
+
+
