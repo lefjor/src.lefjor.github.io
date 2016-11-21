@@ -20,7 +20,7 @@ img {
 
 /* General Slides */
 .slide {
-  padding: em 0;
+  padding: 4em 0;
   border-bottom: 1px solid #2F2F2F; }
   .slide h2 {
     font-size: 2em;
