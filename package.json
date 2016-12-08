@@ -1,0 +1,35 @@
+{
+  "name": "lefjor.github.io",
+  "version": "1.0.0",
+  "description": "resume of lefjor",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lefjor/lefjor.github.io.git"
+  },
+  "keywords": [
+    "resume",
+    "lefjor"
+  ],
+  "author": "lefjor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lefjor/lefjor.github.io/issues"
+  },
+  "homepage": "https://github.com/lefjor/lefjor.github.io#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.5",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "path": "^0.12.7",
+    "webpack": "^1.13.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
+    "gulp-imagemin": "^3.1.1"
+  }
+}

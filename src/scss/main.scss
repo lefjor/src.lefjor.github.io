@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+
+$backgroundColorSlideBeforeAfter : #2F2F2F;
+$textColorSlideBeforeAfter : #FFFFFF;
+
+@mixin slides($color, $h2Colors, $h4Colors) {
+  @extend .slide;
+  color: $color;
+  h2 {
+    color: $h2Colors;
+  }
+  h4 {
+    color: $h4Colors;
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.menu {
+  background-color: $backgroundColorSlideBeforeAfter;
+  color: $textColorSlideBeforeAfter;
+}
+
+.slide {
+  border-bottom: 1px solid $backgroundColorSlideBeforeAfter;
+}
+
+.slide0 {
+  background-color: $backgroundColorSlideBeforeAfter;
+  color: $textColorSlideBeforeAfter;
+}
+
+.slide1, .slide4 {
+  @include slides(#2F2F2F, #486ABA, #486ABA);
+}
+
+.slide2 {
+  @include slides(#8a8683, #0A7EFC, #0A7EFC);
+}
+
+.slide3 {
+  @include slides(#2B343D, #4CBADD, #4CBADD);
+}
+
+.slide5 {
+  @include slides(#65646A, #F4901D, #F4901D);
+}
+
+.slideAutre {
+  background-color: $backgroundColorSlideBeforeAfter;
+}
