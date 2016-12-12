@@ -28,12 +28,15 @@
   },
   "devDependencies": {
     "browser-sync": "^2.18.2",
+    "critical": "^0.8.1",
     "gulp": "^3.9.1",
     "gulp-cli": "^1.2.2",
     "gulp-imagemin": "^3.1.1",
     "gulp-inject": "^4.1.0",
+    "gulp-inline-css": "^3.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-uncss": "^1.0.6",
+    "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^5.0.0",
     "wiredep": "^4.0.0"
   }

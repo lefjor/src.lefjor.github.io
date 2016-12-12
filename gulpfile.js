@@ -9,28 +9,32 @@ var gulp = require('gulp'),
     imagemin = require("gulp-imagemin"),
     inject = require('gulp-inject'),
     rename = require('gulp-rename'),
-    uncss = require('gulp-uncss');
-pngquant = require('imagemin-pngquant');
-wiredep = require('wiredep').stream;
+    uncss = require('gulp-uncss'),
+    pngquant = require('imagemin-pngquant'),
+    inlineCss = require('gulp-inline-css'),
+    gutil = require('gulp-util');
+var critical = require('critical').stream;
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
 // Tâche "critical" = critical inline CSS
 gulp.task('critical', function () {
-    return gulp.src(prod + '/*.html')
-        .pipe(critical({
-            base: prod,
-            inline: true,
-            width: 320,
-            height: 480,
-            minify: true
+    return gulp.src('dist/*.html')
+        .pipe(inlineCss({
+            applyStyleTags: true,
+            applyLinkTags: true,
+            removeStyleTags: true,
+            removeLinkTags: true
         }))
-        .pipe(gulp.dest(prod));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', ['build-css', 'build-html', 'build-img', 'build-ico']);
 
 gulp.task('serve', ['watch']);
+
+// Tâche "prod" = toutes les tâches ensemble
+gulp.task('prod', ['build-css', 'build-html', 'critical', 'build-img', 'build-ico']);
 
 gulp.task('browser-sync', function () {
     browserSync.init({
