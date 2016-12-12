@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     inject = require('gulp-inject'),
     rename = require('gulp-rename'),
     uncss = require('gulp-uncss');
+pngquant = require('imagemin-pngquant');
 wiredep = require('wiredep').stream;
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
@@ -80,7 +81,7 @@ gulp.task('build-html', ['copy-bootstrap', 'build-css'], function () {
 //Minify png and copy to dist/img
 gulp.task('build-img', function () {
     return gulp.src('src/img/**/*.png')
-        .pipe(imagemin({progressive: true}))
+        .pipe(imagemin({progressive: true, use: [pngquant()]}))
         .pipe(gulp.dest('dist/img'));
 });
 
