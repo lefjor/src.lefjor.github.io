@@ -1,6 +1,6 @@
 sudo: false
 branches:
-  except:
+  only:
   - master
 language: node_js
 node_js:
