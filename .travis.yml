@@ -9,7 +9,7 @@ git:
   depth: 100000
 before_script:
   - npm install -g gulp
-script: gulp prod
+  - gulp prod
 env:
   global:
     #GITHUB_TOKEN
