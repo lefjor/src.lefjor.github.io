@@ -6,13 +6,13 @@ git:
   depth: 100000
 env:
   global:
-    - deploy: null
     #GITHUB_TOKEN
     - secure: >-
         FlGAbbH0vQB3JmkQ7gw5JR0aI09mldCGEZZK4NZr+9E1XSf8DpsHx+2h2q0H8X9tCEI/90dGvs2q5U3lpc0ug6uegVnkA/uU/DLzFRnL+jjmwLkwbjo/QJZddoao84P/Il5K5d4pzArxP8FIQSQI6f2P7Y/1QiODi44Dhnr3az6QngDx/i+Qc34hdCxJwqD7WLpv6VXUbbWpbM5Hwue90COdA57oMHeC6n5fB1JZZy82O/MTvgGxbS2nsckulCLo/RoYHPCrBG5mt1m9QzjPDNlUqgnG8VbztS7JuJanICFRM9gJj5g/oCdWvu6biJs5FLCWEjH+6jw+V4ACWyUP2o4L5PJOOgXRKF2gjuD7fD6vMwqZahsWmirVIK5ScOXhHs7Sst3IYML4Tf/z75eEoPfFDIOu8yE779pF9RYw7tlyRgxij4LM6UIytVs8ema9zAdaVaLQX+O+dPENG2gJQCahJIT8NxY/5kKcpAI9Q/d9hMtApEXJZeuHYWnDOAyDZiEmASE/TSl5qMW3acAPeY9sWqN41rxwQY7+Tu/3gX7eV23H5Z33KNwpNDfmwao8thqzacSKE92eJCXmfS67LfzV1qhwfI3TxkjZ3W/jkqhvq9XrdvgnYlG5CMZSM2b4NpvmOu9jWnwJG4TUhDrTTaVfeXdZtIolymAvmYNyiy8=
     - GIT_DEPLOY_REPO=https://$GITHUB_TOKEN@github.com/lefjor/lefjor.github.io.git
-  skip_cleanup: true
-  provider: script
-  script: ./scripts/deploy.sh
-  'on':
-    branch: master
+  deploy :
+    skip_cleanup: true
+    provider: script
+    script: ./scripts/deploy.sh
+    'on':
+      branch: master
