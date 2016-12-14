@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-GIT_DEPLOY_REPO=${GIT_DEPLOY_REPO:-$(node -e 'process.stdout.write(require("./package.json").repository)')}
+#GIT_DEPLOY_REPO=${GIT_DEPLOY_REPO:-$(node -e 'process.stdout.write(require("./package.json").repository)')}
 
 cd dist && \
 $(npm bin)/rimraf .git
@@ -9,4 +9,4 @@ git config user.name \"Travis CI\" && \
 git config user.email \"github@travis-ci.org\" && \
 git add . && \
 git commit -m "Deploy to GitHub Pages" && \
-git push --force "${GIT_DEPLOY_REPO}" master
+git push --force "https://${GITHUB_TOKEN}@github.com/lefjor/lefjor.github.io.git" master
