@@ -12,7 +12,10 @@ var gulp = require('gulp'),
     uncss = require('gulp-uncss'),
     pngquant = require('imagemin-pngquant'),
     inlineCss = require('gulp-inline-css'),
-    gutil = require('gulp-util');
+    changed = require('gulp-changed'),
+    autoprefixer = require('gulp-autoprefixer'),
+    clean = require('gulp-rimraf');
+gutil = require('gulp-util');
 var critical = require('critical').stream;
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
@@ -56,10 +59,17 @@ gulp.task('build-css', function () {
         .pipe(rename({
             suffix: '.min'
         }))
+        .pipe(autoprefixer())
         .pipe(cleanCss())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/css'));
 });
+
+gulp.task('clean', [], function () {
+    console.log("Clean all files in build folder");
+    return gulp.src("dist/*", {read: false}).pipe(clean());
+});
+
 
 gulp.task('copy-bootstrap', function () {
     return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
@@ -87,11 +97,13 @@ gulp.task('build-html', ['copy-bootstrap', 'build-css'], function () {
         .pipe(gulp.dest('dist'));
 });
 
-//Minify png and copy to dist/img
+//Minify img and copy to dist/img
 gulp.task('build-img', function () {
-    return gulp.src('src/img/**/*.png')
+    var imgDst = 'dist/img';
+    return gulp.src('src/img/**/*.+(png|jpg|gif)')
+        .pipe(changed(imgDst))
         .pipe(imagemin({progressive: true, use: [pngquant()]}))
-        .pipe(gulp.dest('dist/img'));
+        .pipe(gulp.dest(imgDst));
 });
 
 // copy ico
