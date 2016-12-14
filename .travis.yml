@@ -8,12 +8,7 @@ node_js:
 git:
   depth: 100000
 before_script:
-  - npm install -g gulp
   - gulp prod
-env:
-  global:
-    - secure: >-
-        ZkeL1YCAOek6sSY7qEBTnHSQdKnlSj0BBs+PUoXvXR8BwxaGOV90LfoDlb+ftKnl3C7GZFyA6n/kRUoJnurder2BcG7JK4/Rg25sCWxW+7T6kNOvyfjZYy+eNOdnWtoWkqj/BmVQWKU/Guk+CbW7Z5oCiQLmvJqE1sIXuiqrdHJuNYdL/1hF7GTIDIoVIq7EEMRZcc/fVxiN61JXFepv7sUdBqlSJn8KkKvGmDbaISaQo6mv9+6+oM1F2V/2HHnLv+81BPE+aSd5T6KKABqyh/5379GoHWosrlkS6dZluCY7sJDMIib1AnmIA4CcDTh2uybEOJx41n/QyWoqGL38s1FvabkqZzm/Tpu1brOmaQ6OvJr7C8MT0GAEWeZ7QwGqTERvqF0G6OXEgAtDJumlbliUzsFJH3UrLkPpugFtGOHcWx+a9r8npEmni3zS+S6WsxEKJelHSyOACLeI/vWjs2i6M0FwCWPiltHaj3xCaCB1b4X7O3vvb2eTU88dZQKzbeX9K+j3DFg8BnbP8GzVi4ezhMtRJ/RFaIRzu9TPF3qABjpvQHX5f4xYrWkq8Jr6SvQxuTN4bcoHzZqPbXuo0TedaoGdonzcrHpcNBGmbjb3ogIOBGC1rgCfFiNoX+MSRUSKM+A1JEhpcuFs/EbZRBjvmTEp2DfX3rqYqx29iBA=
 deploy:
   skip_cleanup: true
   provider: script
