@@ -19,6 +19,6 @@ env:
 deploy :
   skip_cleanup: true
   provider: script
-  script: ./scripts/deploy.sh
+  script: chmod +x ./scripts/deploy.sh && ./scripts/deploy.sh
   on:
     branch: master
