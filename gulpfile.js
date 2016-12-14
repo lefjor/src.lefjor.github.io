@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     minifyHtml = require('gulp-minify-html'),
-    minifyCss = require("gulp-minify-css"),
+    cleanCss = require("gulp-clean-css"),
     imagemin = require("gulp-imagemin"),
     inject = require('gulp-inject'),
     rename = require('gulp-rename'),
@@ -29,12 +29,12 @@ gulp.task('critical', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['build-css', 'build-html', 'build-img', 'build-ico']);
+gulp.task('default', ['build-css', 'build-html', 'build-img', 'build-ico', 'build-humans']);
 
 gulp.task('serve', ['watch']);
 
 // Tâche "prod" = toutes les tâches ensemble
-gulp.task('prod', ['build-css', 'build-html', 'critical', 'build-img', 'build-ico']);
+gulp.task('prod', ['build-css', 'build-html', 'critical', 'build-img', 'build-ico', 'build-humans']);
 
 gulp.task('browser-sync', function () {
     browserSync.init({
@@ -50,14 +50,14 @@ gulp.task('build-css', function () {
     return gulp.src('src/scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(sourcemaps.write())
         .pipe(uncss({
             html: ['src/*.html']
         }))
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(minifyCss())
+        .pipe(cleanCss())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/css'));
 });
 
@@ -65,6 +65,11 @@ gulp.task('copy-bootstrap', function () {
     return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
         .pipe(uncss({html: ['src/*.html']}))
         .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('build-humans', function () {
+    return gulp.src('src/assets/txt/**/*.txt')
+        .pipe(gulp.dest('dist/assets/txt/'));
 });
 
 // Minify HTML and copy to dist
