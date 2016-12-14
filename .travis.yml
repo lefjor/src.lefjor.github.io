@@ -1,7 +1,7 @@
 sudo: false
 branches:
   only:
-  - master
+    - master
 language: node_js
 node_js:
   - 5
@@ -12,13 +12,12 @@ before_script:
   - gulp prod
 env:
   global:
-    #GITHUB_TOKEN
     - secure: >-
-        FlGAbbH0vQB3JmkQ7gw5JR0aI09mldCGEZZK4NZr+9E1XSf8DpsHx+2h2q0H8X9tCEI/90dGvs2q5U3lpc0ug6uegVnkA/uU/DLzFRnL+jjmwLkwbjo/QJZddoao84P/Il5K5d4pzArxP8FIQSQI6f2P7Y/1QiODi44Dhnr3az6QngDx/i+Qc34hdCxJwqD7WLpv6VXUbbWpbM5Hwue90COdA57oMHeC6n5fB1JZZy82O/MTvgGxbS2nsckulCLo/RoYHPCrBG5mt1m9QzjPDNlUqgnG8VbztS7JuJanICFRM9gJj5g/oCdWvu6biJs5FLCWEjH+6jw+V4ACWyUP2o4L5PJOOgXRKF2gjuD7fD6vMwqZahsWmirVIK5ScOXhHs7Sst3IYML4Tf/z75eEoPfFDIOu8yE779pF9RYw7tlyRgxij4LM6UIytVs8ema9zAdaVaLQX+O+dPENG2gJQCahJIT8NxY/5kKcpAI9Q/d9hMtApEXJZeuHYWnDOAyDZiEmASE/TSl5qMW3acAPeY9sWqN41rxwQY7+Tu/3gX7eV23H5Z33KNwpNDfmwao8thqzacSKE92eJCXmfS67LfzV1qhwfI3TxkjZ3W/jkqhvq9XrdvgnYlG5CMZSM2b4NpvmOu9jWnwJG4TUhDrTTaVfeXdZtIolymAvmYNyiy8=
+        bFXBI7IlK5qwCQimmOWF6KgRi0XsZfue0HNZhBj2SbekPtZ0QMNH/yuawnLv275G5yoK8J2U62EUcBAFQeDbL3qofmYQLMvO+xVhdVQLZwMJNmdlyKgIQPCwr9YPN8dFHsG2JNzgMFNsUCMFmcu84TbHv74f5ByOftrTXmLHqCJNwJdJdhJse/NFAlryl9A+9woo2BJAJGBugG5aT+pWpwKWg1diIh+6IM/VIjDnwiMBOePcRHVm5knFBKMWGpnSUFvisGeY1Zp44smVnogxsVt/S2M8TRmHjf5APCtdbn0nPHJtm2oWyALyy58zwHmmZPj3KhnDyH7N5G0p/r1fAu3D9nyjXYyuvsDm0jwxQ/ydRyuVR0VYLrA38TA5kxKHIuhZaHFgaNDohAYaW3mU4J4HIXEHNaxYAPg75lHzdoXB1u5pFYQqQYShdN/gcdKITQ6fAyYNFwjDp2XugATm6odI+UghrfaYLYfEK/UyKlvisnNHJTUYFNJZekt7sw1agazPrvlr5cUIRiQOPHdafgtWGvgkqtkKO6kDDAb/+MB7+hVolRJMJAMXzuV+vPrAb8Njk+ezJ0KLm8teEH5RdMlgMN3/i5C42bZwlLGQuXbuOkKm6X0CrsuqQby9SRWvWZvmKlaTSnO2zWGTDoPxzTxFGxhimFZfxRo6oP+TVqc=
     - GIT_DEPLOY_REPO=https://$GITHUB_TOKEN@github.com/lefjor/lefjor.github.io.git
-deploy :
+deploy:
   skip_cleanup: true
   provider: script
   script: chmod +x ./scripts/deploy.sh && ./scripts/deploy.sh
-  on:
+  'on':
     branch: master
