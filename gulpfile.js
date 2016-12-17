@@ -32,12 +32,11 @@ gulp.task('critical', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['build-css', 'build-html', 'build-img', 'build-ico', 'build-humans']);
+gulp.task('default', ['clean', 'copy-bootstrap', 'build-css', 'build-img', 'build-ico', 'build-humans', 'build-html']);
 
 gulp.task('serve', ['watch']);
 
-// Tâche "prod" = toutes les tâches ensemble
-gulp.task('prod', ['build-css', 'build-html', 'critical', 'build-img', 'build-ico', 'build-humans']);
+gulp.task('prod', ['prod-build-css', 'prod-copy-boostrap', 'prod-build-html', 'critical', 'build-img', 'build-ico', 'build-humans']);
 
 gulp.task('browser-sync', function () {
     browserSync.init({
@@ -45,11 +44,10 @@ gulp.task('browser-sync', function () {
             baseDir: "dist"
         }
     });
-    //gulp.watch(config.browsersync.watch).on('change', reload);
 });
 
 // SCSS + SourceMaps + minify to CSS
-gulp.task('build-css', function () {
+gulp.task('prod-build-css', function () {
     return gulp.src('src/scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
@@ -65,25 +63,55 @@ gulp.task('build-css', function () {
         .pipe(gulp.dest('dist/css'));
 });
 
+// SCSS + SourceMaps + minify to CSS
+gulp.task('build-css', function () {
+    return gulp.src('src/scss/**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'));
+});
+
 gulp.task('clean', [], function () {
     console.log("Clean all files in build folder");
     return gulp.src("dist/*", {read: false}).pipe(clean());
 });
 
-
-gulp.task('copy-bootstrap', function () {
+gulp.task('prod-copy-bootstrap', function () {
     return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
         .pipe(uncss({html: ['src/*.html']}))
         .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('copy-bootstrap', function () {
+    return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
+        .pipe(gulp.dest('dist/css'));
+});
+
 gulp.task('build-humans', function () {
+    const dest = 'dist/assets/txt/';
+
     return gulp.src('src/assets/txt/**/*.txt')
-        .pipe(gulp.dest('dist/assets/txt/'));
+        .pipe(changed(dest))
+        .pipe(gulp.dest(dest));
 });
 
 // Minify HTML and copy to dist
-gulp.task('build-html', ['copy-bootstrap', 'build-css'], function () {
+gulp.task('build-html', ['copy-bootstrap', 'build-css'],function () {
+    var injectFiles = gulp.src(['dist/css/**/*.css']);
+
+    var injectOptions = {
+        addRootSlash: false,
+        ignorePath: ['src', 'dist']
+    };
+
+    return gulp.src('src/*.html')
+        .pipe(inject(injectFiles, injectOptions))
+        .pipe(gulp.dest('dist'));
+});
+
+// Minify HTML and copy to dist
+gulp.task('prod-build-html', ['prod-copy-bootstrap', 'prod-build-css'],function () {
     var injectFiles = gulp.src(['dist/css/**/*.css']);
 
     var injectOptions = {
@@ -108,8 +136,10 @@ gulp.task('build-img', function () {
 
 // copy ico
 gulp.task('build-ico', function () {
+    const dest = 'dist/img';
     return gulp.src(['src/img/**/*.ico'])
-        .pipe(gulp.dest('dist/img'));
+        .pipe(changed(dest))
+        .pipe(gulp.dest(dest));
 });
 
 gulp.task('watch', ['browser-sync'], function () {
@@ -118,8 +148,5 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch('src/img/**/*.png', ['build-img']);
     gulp.watch('src/img/**/*.ico', ['build-ico']);
 
-    gulp.watch('./dist/css/**/*.css', reload);
-    gulp.watch('./dist/*.html', reload);
-    gulp.watch('./dist/img/**/*.png', reload);
-    gulp.watch('./dist/img/**/*.ico', reload);
+    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico'], reload);
 });

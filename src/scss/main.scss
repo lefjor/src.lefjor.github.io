@@ -31,6 +31,10 @@ img {
   border-bottom: 1px solid $backgroundColorSlideBeforeAfter;
 }
 
+.inter-slide {
+  border-bottom: 1px dotted $backgroundColorSlideBeforeAfter;
+}
+
 .slide0 {
   background-color: $backgroundColorSlideBeforeAfter;
   color: $textColorSlideBeforeAfter;
