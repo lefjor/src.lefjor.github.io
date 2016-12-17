@@ -36,7 +36,7 @@ gulp.task('default', ['clean', 'copy-bootstrap', 'build-css', 'build-img', 'buil
 
 gulp.task('serve', ['watch']);
 
-gulp.task('prod', ['prod-build-css', 'prod-copy-boostrap', 'prod-build-html', 'critical', 'build-img', 'build-ico', 'build-humans']);
+gulp.task('prod', ['prod-build-css', 'prod-copy-bootstrap', 'prod-build-html', 'critical', 'build-img', 'build-ico', 'build-humans']);
 
 gulp.task('browser-sync', function () {
     browserSync.init({
