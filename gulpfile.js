@@ -21,7 +21,7 @@ var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
 // Tâche "critical" = critical inline CSS
-gulp.task('critical', function () {
+gulp.task('prod-critical', ['prod-build-html'], function () {
     return gulp.src('dist/*.html')
         .pipe(inlineCss({
             applyStyleTags: true,
@@ -32,11 +32,23 @@ gulp.task('critical', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['clean', 'copy-bootstrap', 'build-css', 'build-img', 'build-ico', 'build-humans', 'build-html']);
+// Tâche "critical" = critical inline CSS
+gulp.task('critical', ['build-html'], function () {
+    return gulp.src('dist/*.html')
+        .pipe(inlineCss({
+            applyStyleTags: true,
+            applyLinkTags: true,
+            removeStyleTags: true,
+            removeLinkTags: true
+        }))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['clean', 'copy-bootstrap', 'build-css', 'build-img', 'build-ico', 'build-humans', 'build-html', 'critical']);
 
 gulp.task('serve', ['watch']);
 
-gulp.task('prod', ['prod-build-css', 'prod-copy-bootstrap', 'prod-build-html', 'critical', 'build-img', 'build-ico', 'build-humans']);
+gulp.task('prod', ['prod-build-css', 'prod-copy-bootstrap', 'prod-build-html', 'prod-critical', 'build-img', 'build-ico', 'build-humans']);
 
 gulp.task('browser-sync', function () {
     browserSync.init({
