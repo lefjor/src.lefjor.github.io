@@ -5,7 +5,7 @@ var del = require('del');
 var runSeq = require('run-sequence');
 var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant');
-var critical = require('critical').stream;
+var critical = require('critical');
 var browserSync = require('browser-sync').create();
 var $ = require('gulp-load-plugins')({lazy: true});
 
@@ -23,7 +23,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:bootstrap', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html');
+        runSeq('clean:dist', 'build:bootstrap', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'critical');
     });
 
 /**
@@ -31,7 +31,23 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:bootstrap', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'watch');
+    runSeq('clean:dist', 'build:bootstrap', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'critical', 'watch');
+});
+
+/**
+ * Critical CSS generation
+ */
+gulp.task('critical', function () {
+    $.if(isProd,
+        critical.generate({
+            inline: true,
+            base: 'dist/',
+            src: 'index.html',
+            dest: 'index.html',
+            width: 320,
+            height: 480,
+            minify: true
+        }));
 });
 
 /**
@@ -56,7 +72,7 @@ gulp.task('browser-sync', function () {
  */
 gulp.task('build:bootstrap', function () {
     return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
-        .pipe($.if(env === 'prod', $.uncss({html: ['src/*.html']})))
+        .pipe($.if(isProd, $.uncss({html: ['src/*.html']})))
         .pipe(gulp.dest('dist/css'));
 });
 
@@ -133,12 +149,6 @@ gulp.task('build:html', function () {
     return gulp.src(config.directory.srcHtml)
         .pipe($.inject(injectFiles, injectOptions))
         .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
-        /*.pipe($.if(isProd, $.inlineCss({
-            applyStyleTags: true,
-            applyLinkTags: true,
-            removeStyleTags: true,
-            removeLinkTags: true
-        })))*/
         .pipe(gulp.dest(config.build));
 });
 
