@@ -1,159 +1,152 @@
 /* File: gulpfile.js */
-
-// grab our gulp packages
+var config = require('./gulp.config');
+var args = require('yargs').argv;
+var del = require('del');
+var runSeq = require('run-sequence');
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    minifyHtml = require('gulp-minify-html'),
-    cleanCss = require("gulp-minify-css"),
-    imagemin = require("gulp-imagemin"),
-    inject = require('gulp-inject'),
-    rename = require('gulp-rename'),
-    uncss = require('gulp-uncss'),
-    pngquant = require('imagemin-pngquant'),
-    inlineCss = require('gulp-inline-css'),
-    changed = require('gulp-changed'),
-    autoprefixer = require('gulp-autoprefixer'),
-    clean = require('gulp-rimraf');
-gutil = require('gulp-util');
+    pngquant = require('imagemin-pngquant');
 var critical = require('critical').stream;
 var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
+var $ = require('gulp-load-plugins')({lazy: true});
 
-// Tâche "critical" = critical inline CSS
-gulp.task('prod-critical', ['prod-build-html'], function () {
-    return gulp.src('dist/*.html')
-        .pipe(inlineCss({
-            applyStyleTags: true,
-            applyLinkTags: true,
-            removeStyleTags: true,
-            removeLinkTags: true
-        }))
-        .pipe(gulp.dest('dist'));
+var env = args.env ? 'prod' : 'dev';
+var isProd = args.env === 'prod';
+
+/**
+ * List the available gulp tasks
+ */
+gulp.task('help', $.taskListing);
+
+/**
+ * Build all the project with dev or prod environnement
+ */
+gulp.task('build',
+    function () {
+        $.util.log('Environnement : ' + $.util.colors.blue(args.env));
+        runSeq('clean:dist', 'build:bootstrap', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html');
+    });
+
+/**
+ * Default task to launch the project
+ */
+gulp.task('default', function () {
+    $.util.log('Environnement : ' + $.util.colors.blue(args.env));
+    runSeq('clean:dist', 'build:bootstrap', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'watch');
 });
 
-// Tâche "critical" = critical inline CSS
-gulp.task('critical', ['build-html'], function () {
-    return gulp.src('dist/*.html')
-        .pipe(inlineCss())
-        .pipe(gulp.dest('dist'));
+/**
+ * Remove all files from the build
+ */
+gulp.task('clean:dist', function () {
+    var delconfig = [].concat(config.build);
+    $.util.log('Cleaning: ' + $.util.colors.blue(delconfig));
+    return del.sync(delconfig);
 });
-
-gulp.task('default', ['clean', 'copy-bootstrap', 'build-css', 'build-img', 'build-ico', 'build-humans', 'build-html']);
-
-gulp.task('serve', ['watch']);
-
-gulp.task('prod', ['prod-build-css', 'prod-copy-bootstrap', 'prod-build-html', 'build-img', 'build-ico', 'build-humans']);
 
 gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
-            baseDir: "dist"
+            baseDir: 'dist'
         }
     });
 });
 
-// SCSS + SourceMaps + minify to CSS
-gulp.task('prod-build-css', function () {
-    return gulp.src('src/scss/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass())
-        .pipe(uncss({
+/**
+ * Search Bootstrap to include in index.html
+ */
+gulp.task('build:bootstrap', function () {
+    return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
+        .pipe($.if(env === 'prod', $.uncss({html: ['src/*.html']})))
+        .pipe(gulp.dest('dist/css'));
+});
+
+/**
+ * Compile less to css
+ * @return {Stream}
+ */
+gulp.task('build:css', function () {
+    $.util.log('Compiling Sass --> CSS');
+
+    return gulp.src(config.directory.sass)
+        .pipe($.sass({errLogToConsole: true}))
+        .pipe($.plumber())
+        .pipe($.if(!isProd, $.sourcemaps.init()))
+        .pipe($.if(isProd, $.uncss({
             html: ['src/*.html']
-        }))
-        .pipe(rename({
+        })))
+        .pipe($.if(isProd, $.rename({
             suffix: '.min'
-        }))
-        .pipe(autoprefixer())
-        .pipe(cleanCss())
-        .pipe(sourcemaps.write())
+        })))
+        .pipe($.if(isProd, $.autoprefixer()))
+        .pipe($.if(isProd, $.csso()))
+        //.pipe($.if(isProd, $.filter))
+        .pipe($.if(!isProd, $.sourcemaps.write('.', {includeContent: false, sourceRoot: 'src/scss'})))
+        //.pipe($.if(isProd, $.filter.restore))
         .pipe(gulp.dest('dist/css'));
 });
 
-// SCSS + SourceMaps + minify to CSS
-gulp.task('build-css', function () {
-    return gulp.src('src/scss/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/css'));
+/**
+ * Build, optimize img
+ */
+gulp.task('build:img', function () {
+    return gulp.src(config.directory.srcImg)
+        .pipe($.newer(config.directory.distImg))
+        .pipe($.if(isProd, $.imagemin({
+            optimizationLevel: 7,
+            interlaced: true,
+            progressive: true,
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest(config.directory.distImg));
 });
 
-gulp.task('clean', [], function () {
-    console.log("Clean all files in build folder");
-    return gulp.src("dist/*", {read: false}).pipe(clean());
+/**
+ * Build, optimize ico
+ */
+gulp.task('build:ico', function () {
+    return gulp.src(config.directory.srcIco)
+        .pipe($.changed(config.directory.distImg))
+        .pipe(gulp.dest(config.directory.distImg));
 });
 
-gulp.task('prod-copy-bootstrap', function () {
-    return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
-        .pipe(uncss({html: ['src/*.html']}))
-        .pipe(gulp.dest('dist/css'));
+/**
+ * Build humans.txt
+ */
+gulp.task('build:humans', function () {
+    return gulp.src(config.directory.srcHumans)
+        .pipe($.changed(config.directory.distHumans))
+        .pipe(gulp.dest(config.directory.distHumans));
 });
 
-gulp.task('copy-bootstrap', function () {
-    return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
-        .pipe(gulp.dest('dist/css'));
-});
-
-gulp.task('build-humans', function () {
-    const dest = 'dist/assets/txt/';
-
-    return gulp.src('src/assets/txt/**/*.txt')
-        .pipe(changed(dest))
-        .pipe(gulp.dest(dest));
-});
-
-// Minify HTML and copy to dist
-gulp.task('build-html', ['copy-bootstrap', 'build-css'],function () {
-    var injectFiles = gulp.src(['dist/css/**/*.css']);
+/**
+ * Build, optimize and inject style with HTML files
+ */
+gulp.task('build:html', function () {
+    var injectFiles = gulp.src('dist/css/**/*.css');
+    $.util.log("injectFiles " + injectFiles);
 
     var injectOptions = {
         addRootSlash: false,
         ignorePath: ['src', 'dist']
     };
 
-    return gulp.src('src/*.html')
-        .pipe(inject(injectFiles, injectOptions))
-        .pipe(gulp.dest('dist'));
-});
-
-// Minify HTML and copy to dist
-gulp.task('prod-build-html', ['prod-copy-bootstrap', 'prod-build-css'],function () {
-    var injectFiles = gulp.src(['dist/css/**/*.css']);
-
-    var injectOptions = {
-        addRootSlash: false,
-        ignorePath: ['src', 'dist']
-    };
-
-    return gulp.src('src/*.html')
-        .pipe(inject(injectFiles, injectOptions))
-        .pipe(minifyHtml())
-        .pipe(gulp.dest('dist'));
-});
-
-//Minify img and copy to dist/img
-gulp.task('build-img', function () {
-    var imgDst = 'dist/img';
-    return gulp.src('src/img/**/*.+(png|jpg|gif)')
-        .pipe(changed(imgDst))
-        .pipe(imagemin({progressive: true, use: [pngquant()]}))
-        .pipe(gulp.dest(imgDst));
-});
-
-// copy ico
-gulp.task('build-ico', function () {
-    const dest = 'dist/img';
-    return gulp.src(['src/img/**/*.ico'])
-        .pipe(changed(dest))
-        .pipe(gulp.dest(dest));
+    return gulp.src(config.directory.srcHtml)
+        .pipe($.inject(injectFiles, injectOptions))
+        .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
+        /*.pipe($.if(isProd, $.inlineCss({
+            applyStyleTags: true,
+            applyLinkTags: true,
+            removeStyleTags: true,
+            removeLinkTags: true
+        })))*/
+        .pipe(gulp.dest(config.build));
 });
 
 gulp.task('watch', ['browser-sync'], function () {
-    gulp.watch('src/scss/**/*.scss', ['build-css']);
-    gulp.watch('src/*.html', ['build-html']);
-    gulp.watch('src/img/**/*.png', ['build-img']);
-    gulp.watch('src/img/**/*.ico', ['build-ico']);
+    gulp.watch(config.directory.sass, ['build:css']);
+    gulp.watch(config.directory.srcHtml, ['build:html']);
+    gulp.watch(config.directory.srcImg, ['build:img']);
+    gulp.watch(config.directory.srcIco, ['build:ico']);
 
-    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico'], reload);
+    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico'], browserSync.reload);
 });

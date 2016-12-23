@@ -8,7 +8,7 @@ node_js:
 git:
   depth: 100000
 before_script:
-  - gulp prod
+  - gulp build --env=prod
 deploy:
   skip_cleanup: true
   provider: script

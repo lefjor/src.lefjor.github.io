@@ -1,0 +1,13 @@
+{
+  "build": "dist/",
+  "directory": {
+    "sass": "src/scss/**/*.scss",
+    "srcHtml" : "src/*.html",
+    "srcHumans": "src/assets/txt/**/*.txt",
+    "srcImg" : "src/img/**/*.+(png|jpg|gif)",
+    "srcIco" : "src/img/**/*.ico",
+    "distCss": "dist/css",
+    "distHumans": "dist/assets/txt/",
+    "distImg" : "dist/img"
+  }
+}
