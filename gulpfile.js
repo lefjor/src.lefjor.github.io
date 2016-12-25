@@ -10,7 +10,7 @@ var browserSync = require('browser-sync').create();
 var $ = require('gulp-load-plugins')({lazy: true});
 
 var env = args.env ? 'prod' : 'dev';
-var isProd = args.env === 'prod';
+var isProd = env === 'prod';
 
 /**
  * List the available gulp tasks
@@ -23,7 +23,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:bootstrap', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'critical');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'critical');
     });
 
 /**
@@ -31,7 +31,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:bootstrap', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'critical', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'critical', 'watch');
 });
 
 /**
@@ -68,23 +68,12 @@ gulp.task('browser-sync', function () {
 });
 
 /**
- * Search Bootstrap to include in index.html
- */
-gulp.task('build:bootstrap', function () {
-    return gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
-        .pipe($.if(isProd, $.uncss({html: ['src/*.html']})))
-        .pipe(gulp.dest('dist/css'));
-});
-
-/**
  * Compile less to css
  * @return {Stream}
  */
 gulp.task('build:css', function () {
-    $.util.log('Compiling Sass --> CSS');
-
     return gulp.src(config.directory.sass)
-        .pipe($.sass({errLogToConsole: true}))
+        .pipe($.sass({errLogToConsole: true, includePaths: './node_modules/bootstrap/scss'}))
         .pipe($.plumber())
         .pipe($.if(!isProd, $.sourcemaps.init()))
         .pipe($.if(isProd, $.uncss({
@@ -139,13 +128,10 @@ gulp.task('build:humans', function () {
  */
 gulp.task('build:html', function () {
     var injectFiles = gulp.src('dist/css/**/*.css');
-    $.util.log("injectFiles " + injectFiles);
-
     var injectOptions = {
         addRootSlash: false,
         ignorePath: ['src', 'dist']
     };
-
     return gulp.src(config.directory.srcHtml)
         .pipe($.inject(injectFiles, injectOptions))
         .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
