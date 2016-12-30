@@ -24,7 +24,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'inline:css');
     });
 
 /**
