@@ -4,8 +4,9 @@ var args = require('yargs').argv;
 var del = require('del');
 var runSeq = require('run-sequence');
 var gulp = require('gulp'),
-    pngquant = require('imagemin-pngquant');
-var critical = require('critical');
+    pngquant = require('imagemin-pngquant'),
+    inlineCss = require('gulp-inline-css');
+var critical = require('critical').stream;
 var browserSync = require('browser-sync').create();
 var $ = require('gulp-load-plugins')({lazy: true});
 
@@ -23,7 +24,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'critical');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html');
     });
 
 /**
@@ -31,24 +32,34 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'critical', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'inline:css', 'watch');
 });
 
 /**
  * Critical CSS generation
  */
-gulp.task('critical', function () {
-    $.if(isProd,
-        critical.generate({
-            inline: true,
-            base: 'dist/',
-            src: 'index.html',
-            dest: 'index.html',
-            width: 320,
-            height: 480,
-            minify: true
-        }));
+gulp.task('inline:css', function () {
+    return gulp.src('dist/*.html')
+        .pipe($.if(isProd,
+            critical({
+                inline: true,
+                base: 'dist/',
+                src: 'index.html',
+                dest: 'index.html',
+                width: 320,
+                height: 480,
+                minify: true
+            })))
+        .pipe(gulp.dest(config.build));
 });
+
+/*
+ gulp.task('inline:css', function () {
+ return gulp.src('dist/!*.html')
+ .pipe($.if(isProd, inlineCss()))
+ .pipe(gulp.dest(config.build));
+ });
+ */
 
 /**
  * Remove all files from the build
