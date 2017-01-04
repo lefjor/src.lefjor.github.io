@@ -24,10 +24,6 @@ body {
   color: $textColorSlideBeforeAfter;
 }
 
-/*@media print {
-  .slide { page-break-before: always; }
-}*/
-
 .slide {
   border-bottom: 1px solid $backgroundColorSlideBeforeAfter;
 }
