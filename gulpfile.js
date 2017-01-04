@@ -42,10 +42,11 @@ gulp.task('inline:css', function () {
     return gulp.src('dist/*.html')
         .pipe($.if(isProd,
             critical({
+                inlineImages : true,
                 inline: true,
                 base: 'dist/',
-                src: 'index.html',
-                dest: 'index.html',
+/*                src: 'index.html',
+                dest: 'index.html',*/
                 width: 320,
                 height: 480,
                 minify: true
