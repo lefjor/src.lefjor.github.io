@@ -5,6 +5,7 @@
     "srcHtml" : "src/*.html",
     "srcHumans": "src/assets/txt/**/*.txt",
     "srcImg" : "src/img/**/*.+(png|jpg|gif)",
+    "srcSvg" : "src/img/**/*.+(svg)",
     "srcIco" : "src/img/**/*.ico",
     "distCss": "dist/css",
     "distHumans": "dist/assets/txt/",

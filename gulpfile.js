@@ -24,7 +24,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'inline:css');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg'], 'build:html', 'inline:css');
     });
 
 /**
@@ -32,7 +32,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans'], 'build:html', 'inline:css', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg'], 'build:html', 'inline:css', 'watch');
 });
 
 /**
@@ -42,11 +42,11 @@ gulp.task('inline:css', function () {
     return gulp.src('dist/*.html')
         .pipe($.if(isProd,
             critical({
-                inlineImages : true,
+                inlineImages: true,
                 inline: true,
                 base: 'dist/',
-/*                src: 'index.html',
-                dest: 'index.html',*/
+                /*                src: 'index.html',
+                 dest: 'index.html',*/
                 width: 320,
                 height: 480,
                 minify: true
@@ -114,6 +114,14 @@ gulp.task('build:img', function () {
             progressive: true,
             use: [pngquant()]
         })))
+        .pipe(gulp.dest(config.directory.distImg));
+});
+
+/**
+ * Build, optimize img
+ */
+gulp.task('build:svg', function () {
+    return gulp.src(config.directory.srcSvg)
         .pipe(gulp.dest(config.directory.distImg));
 });
 
