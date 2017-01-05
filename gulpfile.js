@@ -47,8 +47,8 @@ gulp.task('inline:css', function () {
                 base: 'dist/',
                 /*                src: 'index.html',
                  dest: 'index.html',*/
-                width: 320,
-                height: 480,
+   /*             width: 320,
+                height: 480,*/
                 minify: true
             })))
         .pipe(gulp.dest(config.build));
