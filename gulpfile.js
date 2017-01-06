@@ -45,6 +45,16 @@ gulp.task('inline:css', function () {
                 inlineImages: true,
                 inline: true,
                 base: 'dist/',
+                dimensions: [{
+                    width: 320,
+                    height: 480
+                },{
+                    width: 768,
+                    height: 1024
+                },{
+                    width: 1280,
+                    height: 960
+                }],
                 /*                src: 'index.html',
                  dest: 'index.html',*/
    /*             width: 320,
