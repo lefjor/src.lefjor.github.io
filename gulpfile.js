@@ -41,7 +41,6 @@ gulp.task('inline:css', function () {
     return gulp.src('dist/*.html')
         .pipe($.if(isProd,
             critical({
-                inlineImages: true,
                 inline: true,
                 base: 'dist/',
                 dimensions: [{
