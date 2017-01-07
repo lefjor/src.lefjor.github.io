@@ -10,7 +10,7 @@ git:
 install:
   - npm install
 before_script:
-  - gulp build --env=prod
+  - gulp build
 deploy:
   skip_cleanup: true
   provider: script
