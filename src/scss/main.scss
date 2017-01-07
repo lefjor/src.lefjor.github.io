@@ -1,7 +1,7 @@
 @import "bootstrap";
 
-$backgroundColorSlideBeforeAfter : #2F2F2F;
-$textColorSlideBeforeAfter : #FFFFFF;
+$backgroundColorSlideBeforeAfter: #2F2F2F;
+$textColorSlideBeforeAfter: #FFFFFF;
 
 @mixin slides($color, $h2Colors, $h4Colors) {
   @extend .slide;
@@ -15,7 +15,6 @@ $textColorSlideBeforeAfter : #FFFFFF;
 }
 
 body {
-  //font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 }
 
