@@ -4,8 +4,7 @@ var args = require('yargs').argv;
 var del = require('del');
 var runSeq = require('run-sequence');
 var gulp = require('gulp'),
-    pngquant = require('imagemin-pngquant'),
-    inlineCss = require('gulp-inline-css');
+    pngquant = require('imagemin-pngquant');
 var critical = require('critical').stream;
 var browserSync = require('browser-sync').create();
 var $ = require('gulp-load-plugins')({lazy: true});
@@ -48,29 +47,17 @@ gulp.task('inline:css', function () {
                 dimensions: [{
                     width: 320,
                     height: 480
-                },{
+                }, {
                     width: 768,
                     height: 1024
-                },{
+                }, {
                     width: 1280,
                     height: 960
                 }],
-                /*                src: 'index.html',
-                 dest: 'index.html',*/
-   /*             width: 320,
-                height: 480,*/
                 minify: true
             })))
         .pipe(gulp.dest(config.build));
 });
-
-/*
- gulp.task('inline:css', function () {
- return gulp.src('dist/!*.html')
- .pipe($.if(isProd, inlineCss()))
- .pipe(gulp.dest(config.build));
- });
- */
 
 /**
  * Remove all files from the build
