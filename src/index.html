@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" ng-app>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +9,9 @@
     <meta name="author" content="Jordan LEFEBVRE">
     <meta name="keywords" lang="fr" content="cv, jordan, lefebvre, ingenieur, java, developpeur">
     <!-- inject:css -->
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <!-- endinject -->
     <link rel="shortcut icon" href="img/ico/favicon.ico">
 </head>
@@ -38,791 +41,786 @@
         </div>
     </div>
 </div>
-<div class="container slide1 py-2">
-    <div class="row">
-        <div class="col-xs-12 pb-2 mx-auto">
-            <img src="img/picto/entreprise/logo-reactis.png" alt="logo société REACTIS">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
-            <h2>Reactis (Aix-en-Provence)</h2>
-        </div>
-    </div>
-    <div class="row inter-slide mb-2">
-        <div class="col-lg-5 pb-2 text-center">
-            <div class="pb-2">
-                <img src="img/picto/entreprise/logo-adsn.png" alt="logo societe adsn">
+<div class="slides">
+    <div class="container slide1 py-2">
+        <div class="row pb-3">
+            <div class="col-xs-12 mx-auto">
+                <img src="img/picto/entreprise/logo-reactis.png" alt="logo société REACTIS">
             </div>
-            <h3>Depuis Novembre 2016</h3>
+        </div>
+        <div class="row pb-3 hidden-sm-down">
+            <div class="col-xs-12 mx-auto">
+                <h2>Reactis (Aix-en-Provence)</h2>
+            </div>
+        </div>
+        <div class="row inter-slide my-3 pb-3">
+            <div class="col-lg-5 text-center">
+                <div class="pb-2">
+                    <img src="img/picto/entreprise/logo-adsn.png" alt="logo societe adsn">
+                </div>
+                <h3>Depuis Novembre 2016</h3>
+                <h3 class="hidden-sm-down">Association pour le développement du service notarial</h3>
+                <h3 class="hidden-md-up">ADSN</h3>
+                <h3>Secteur : Service du notariat</h3>
+            </div>
+            <div class="col-lg-7">
+                <div class="experience">
+                    <h4>Développement du site immobilier.notaires.fr</h4>
+                    <ul>
+                        <li>Développement des services REST (micro-service), modules AngularJS,</li>
+                        <li>Tests unitaires, validation et mise en intégration.</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>Java 8, Eclipse STS, Maven, Jenkins, Nexus, SpringBoot, SpringBatch, JPA,</li>
+                            <li>CMS Drupal 7.15,</li>
+                            <li>WebStorm, AngularJS 1.5, Grunt,</li>
+                            <li>MariaDB, SVN, Jira.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">Java 8</span>
+                        <span class="badge badge-default">Eclipse STS</span>
+                        <span class="badge badge-default">Maven</span>
+                        <span class="badge badge-default">Jenkins</span>
+                        <span class="badge badge-default">Nexus</span>
+                        <span class="badge badge-default">SpringBoot</span>
+                        <span class="badge badge-default">SpringBatch</span>
+                        <span class="badge badge-default">Drupal 7.15</span>
+                        <span class="badge badge-default">WebStorm</span>
+                        <span class="badge badge-default">AngularJS 1.5</span>
+                        <span class="badge badge-default">Grunt</span>
+                        <span class="badge badge-default">MariaDB</span>
+                        <span class="badge badge-default">SVN</span>
+                        <span class="badge badge-default">Jira</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inter-slide mb-3">
+            <div class="col-lg-5 pb-2 text-center">
+                <div class="pb-2">
+                    <img src="img/picto/entreprise/logo-caisse.png" alt="logo societe it-ce">
+                </div>
+                <h3>Juillet 2013 - Octobre 2016</h3>
+                <h3 class="hidden-sm-down">Informatique & Technologies - Caisse d’Epargne</h3>
+                <h3 class="hidden-md-up">IT-CE</h3>
+                <h3>Secteur : Banques et assurances</h3>
+            </div>
+            <div class="col-lg-7">
+                <div class="experience pb-2">
+                    <h4>Développement du nouveau service de recherche pour le projet refonte du
+                        poste de travail
+                        MyWay</h4>
+                    <ul>
+                        <li>Architecture, gestion du projet (Scrum master),</li>
+                        <li>Pilobadgee de 2 ressources en mode Agile.</li>
+                        <li>Développement des services REST de recherche,</li>
+                        <li>Développement de la couche présentation,</li>
+                        <li>Validation et mise en production.</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>Java 7, Jboss, Maven, Eclipse,</li>
+                            <li>Solution Google Search Appliance (7.2, 7.4),</li>
+                            <li>AngularJS, TypeScript, Gulp, HTML5, LESS, Visual Studio 2013</li>
+                            <li>Jenkins, Nexus, TFS.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">Java 7</span>
+                        <span class="badge badge-default">JBoss</span>
+                        <span class="badge badge-default">Maven</span>
+                        <span class="badge badge-default">Eclipse</span>
+                        <span class="badge badge-default">Google Search Appliance</span>
+                        <span class="badge badge-default">AngularJS</span>
+                        <span class="badge badge-default">TypeScript</span>
+                        <span class="badge badge-default">Gulp</span>
+                        <span class="badge badge-default">HTML5</span>
+                        <span class="badge badge-default">LESS</span>
+                        <span class="badge badge-default">Visual Studio 2013</span>
+                        <span class="badge badge-default">Jenkins</span>
+                        <span class="badge badge-default">Nexus</span>
+                        <span class="badge badge-default">TFS</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Responsabilité, gestion et développement d’outils pour le moteur de
+                        recherche des caisses
+                        d’épargne et IT-CE</h4>
+                    <ul>
+                        <li>Prise en charge du projet,</li>
+                        <li>Relation client avec les caisses d’épargne,</li>
+                        <li>Gestions des demandes d’évolutions,</li>
+                        <li>Gestion de la maintenance,</li>
+                        <li>Monbadgee de l’environnement de production,</li>
+                        <li>Développement de solutions applicatives autour du projet,</li>
+                        <li>Validation et mise en production,</li>
+                        <li>Pilobadgee de 2 ressources.</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>Java 1.6 (XSL), Web (HTML5, CSS (SASS + LESS), Javascript),</li>
+                            <li>Solution Google Search Appliance (6.14, 7.0, 7.2),</li>
+                            <li>RHEL 6.5, Tomcat (6, 7),</li>
+                            <li>MongoDB, Docker,</li>
+                            <li>WebStorm, NodeJS, AngularJS,</li>
+                            <li>Eclipse, Maven, Jenkins, Nexus, SVN, GIT.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">Java 6</span>
+                        <span class="badge badge-default">XSL</span>
+                        <span class="badge badge-default">LESS</span>
+                        <span class="badge badge-default">Javascript</span>
+                        <span class="badge badge-default">Google Search Appliance</span>
+                        <span class="badge badge-default">RHEL 6.5</span>
+                        <span class="badge badge-default">Tomcat 6</span>
+                        <span class="badge badge-default">Tomcat 7</span>
+                        <span class="badge badge-default">MongoDB</span>
+                        <span class="badge badge-default">Docker</span>
+                        <span class="badge badge-default">WebStorm</span>
+                        <span class="badge badge-default">AngularJS</span>
+                        <span class="badge badge-default">NodeJS</span>
+                        <span class="badge badge-default">Eclipse</span>
+                        <span class="badge badge-default">Maven</span>
+                        <span class="badge badge-default">Jenkins</span>
+                        <span class="badge badge-default">Nexus</span>
+                        <span class="badge badge-default">SVN</span>
+                        <span class="badge badge-default">GIT</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Développement pour les produits assurances (IARDS)</h4>
+                    <ul>
+                        <li>Développement des services métiers,</li>
+                        <li>Validation et mise en production.</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>J2EE (Java 1.5), Spring IOC, Hibernate,</li>
+                            <li>Eclipse, Maven, Jenkins, Nexus, SVN.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">Java 5</span>
+                        <span class="badge badge-default">Spring IOC</span>
+                        <span class="badge badge-default">Hibernate</span>
+                        <span class="badge badge-default">Maven</span>
+                        <span class="badge badge-default">Jenkins</span>
+                        <span class="badge badge-default">Nexus</span>
+                        <span class="badge badge-default">SVN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inter-slide mb-3">
+            <div class="col-lg-5 pb-2 text-center">
+                <div class="pb-2">
+                    <img src="img/picto/entreprise/logo-conseil-general.png" alt="logo societe cg83">
+                </div>
+                <h3>Février 2013 - Juin 2013</h3>
 
-            <!--<h3>Ingénieur d’études et développements J2EE/AngularJS</h3>-->
-            <h3 class="hidden-sm-down">Association pour le développement du service notarial</h3>
+                <!--<h3>Ingénieur d’études et développements J2EE - Liferay</h3>-->
 
-            <h3 class="hidden-md-up">ADSN</h3>
-            <h5>Secteur : Service du notariat</h5>
-        </div>
-        <div class="col-lg-7">
-            <div class="experience pb-2">
-                <h4>Développement du site immobilier.notaires.fr</h4>
-                <ul>
-                    <li>Développement des services REST (micro-service), modules AngularJS,</li>
-                    <li>Tests unitaires, validation et mise en intégration.</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>Java 8, Eclipse STS, Maven, Jenkins, Nexus, SpringBoot, SpringBatch, JPA,</li>
-                        <li>CMS Drupal 7.15,</li>
-                        <li>WebStorm, AngularJS 1.5, Grunt,</li>
-                        <li>MariaDB, SVN, Jira.</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">Java 8</span>
-                    <span class="badge badge-default">Eclipse STS</span>
-                    <span class="badge badge-default">Maven</span>
-                    <span class="badge badge-default">Jenkins</span>
-                    <span class="badge badge-default">Nexus</span>
-                    <span class="badge badge-default">SpringBoot</span>
-                    <span class="badge badge-default">SpringBatch</span>
-                    <span class="badge badge-default">Drupal 7.15</span>
-                    <span class="badge badge-default">WebStorm</span>
-                    <span class="badge badge-default">AngularJS 1.5</span>
-                    <span class="badge badge-default">Grunt</span>
-                    <span class="badge badge-default">MariaDB</span>
-                    <span class="badge badge-default">SVN</span>
-                    <span class="badge badge-default">Jira</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row inter-slide mb-2">
-        <div class="col-lg-5 pb-2 text-center">
-            <div class="pb-2">
-                <img src="img/picto/entreprise/logo-caisse.png" alt="logo societe it-ce">
-            </div>
-            <h3>Juillet 2013 - Octobre 2016</h3>
+                <h3 class="hidden-sm-down">Conseil général du Var</h3>
 
-            <!--<h3>Ingénieur d’études et développements J2EE</h3>-->
+                <h3 class="hidden-md-up">CG83</h3>
+                <h3>Secteur : Conseil général</h3>
+            </div>
+            <div class="col-lg-7">
+                <div class="experience pb-2">
+                    <h4>Evolution du site internet du CG 83</h4>
+                    <ul>
+                        <li>Spécification technique,</li>
+                        <li>Validation et mise en production de l’ensemble.</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>Liferay 5.2, Java, Web (JSP/Sass/Javascript/jQuery),</li>
+                            <li>Eclipse, Ant, GIT.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">Liferay 5.2</span>
+                        <span class="badge badge-default">JSP</span>
+                        <span class="badge badge-default">Sass</span>
+                        <span class="badge badge-default">Javascript</span>
+                        <span class="badge badge-default">jQuery</span>
+                        <span class="badge badge-default">Eclipse</span>
+                        <span class="badge badge-default">Ant</span>
+                        <span class="badge badge-default">GIT</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Mise en place de l’intranet du CG 83</h4>
+                    <ul>
+                        <li>Spécification fonctionnelle,</li>
+                        <li>Paramétrage de fonctionnalités de l’intranet,</li>
+                        <li>Mise en place d’un Hook (customisation profonde de Liferay),</li>
+                        <li>Développement d’une Portlet de synchronisation pour les utilisateurs et les
+                            organisations,
+                        </li>
+                        <li>Validation et mise en production de l’ensemble.</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>Liferay 6, Spring MVC, Java, Web (JSP/SASS/Javascript/jQuery),</li>
+                            <li>Eclipse, Maven, GIT, Jenkins, Nexus.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">Liferay 6</span>
+                        <span class="badge badge-default">Spring MVC</span>
+                        <span class="badge badge-default">JSP</span>
+                        <span class="badge badge-default">Sass</span>
+                        <span class="badge badge-default">Javascript</span>
+                        <span class="badge badge-default">jQuery</span>
+                        <span class="badge badge-default">Eclipse</span>
+                        <span class="badge badge-default">Maven</span>
+                        <span class="badge badge-default">GIT</span>
+                        <span class="badge badge-default">Jenkins</span>
+                        <span class="badge badge-default">Nexus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row inter-slide">
+            <div class="col-lg-5 pb-2 text-center">
+                <div class="pb-2">
+                    <img src="img/picto/entreprise/logo-ministere.png" alt="logo societe ministere">
+                </div>
+                <h3>Octobre 2010 - Juin 2013</h3>
 
-            <h3 class="hidden-sm-down">Informatique & Technologies - Caisse d’Epargne</h3>
+                <!--<h3>Ingénieur d’études et développements J2EE</h3>-->
 
-            <h3 class="hidden-md-up">IT-CE</h3>
-            <h5>Secteur : Banques et assurances</h5>
-        </div>
-        <div class="col-lg-7">
-            <div class="experience pb-2">
-                <h4>Développement du nouveau service de recherche pour le projet refonte du
-                    poste de travail
-                    MyWay</h4>
-                <ul>
-                    <li>Architecture, gestion du projet (Scrum master),</li>
-                    <li>Pilobadgee de 2 ressources en mode Agile.</li>
-                    <li>Développement des services REST de recherche,</li>
-                    <li>Développement de la couche présentation,</li>
-                    <li>Validation et mise en production.</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>Java 7, Jboss, Maven, Eclipse,</li>
-                        <li>Solution Google Search Appliance (7.2, 7.4),</li>
-                        <li>AngularJS, TypeScript, Gulp, HTML5, LESS, Visual Studio 2013</li>
-                        <li>Jenkins, Nexus, TFS.</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">Java 7</span>
-                    <span class="badge badge-default">JBoss</span>
-                    <span class="badge badge-default">Maven</span>
-                    <span class="badge badge-default">Eclipse</span>
-                    <span class="badge badge-default">Google Search Appliance</span>
-                    <span class="badge badge-default">AngularJS</span>
-                    <span class="badge badge-default">TypeScript</span>
-                    <span class="badge badge-default">Gulp</span>
-                    <span class="badge badge-default">HTML5</span>
-                    <span class="badge badge-default">LESS</span>
-                    <span class="badge badge-default">Visual Studio 2013</span>
-                    <span class="badge badge-default">Jenkins</span>
-                    <span class="badge badge-default">Nexus</span>
-                    <span class="badge badge-default">TFS</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Responsabilité, gestion et développement d’outils pour le moteur de
-                    recherche des caisses
-                    d’épargne et IT-CE</h4>
-                <ul>
-                    <li>Prise en charge du projet,</li>
-                    <li>Relation client avec les caisses d’épargne,</li>
-                    <li>Gestions des demandes d’évolutions,</li>
-                    <li>Gestion de la maintenance,</li>
-                    <li>Monbadgee de l’environnement de production,</li>
-                    <li>Développement de solutions applicatives autour du projet,</li>
-                    <li>Validation et mise en production,</li>
-                    <li>Pilobadgee de 2 ressources.</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>Java 1.6 (XSL), Web (HTML5, CSS (SASS + LESS), Javascript),</li>
-                        <li>Solution Google Search Appliance (6.14, 7.0, 7.2),</li>
-                        <li>RHEL 6.5, Tomcat (6, 7),</li>
-                        <li>MongoDB, Docker,</li>
-                        <li>WebStorm, NodeJS, AngularJS,</li>
-                        <li>Eclipse, Maven, Jenkins, Nexus, SVN, GIT.</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">Java 6</span>
-                    <span class="badge badge-default">XSL</span>
-                    <span class="badge badge-default">LESS</span>
-                    <span class="badge badge-default">Javascript</span>
-                    <span class="badge badge-default">Google Search Appliance</span>
-                    <span class="badge badge-default">RHEL 6.5</span>
-                    <span class="badge badge-default">Tomcat 6</span>
-                    <span class="badge badge-default">Tomcat 7</span>
-                    <span class="badge badge-default">MongoDB</span>
-                    <span class="badge badge-default">Docker</span>
-                    <span class="badge badge-default">WebStorm</span>
-                    <span class="badge badge-default">AngularJS</span>
-                    <span class="badge badge-default">NodeJS</span>
-                    <span class="badge badge-default">Eclipse</span>
-                    <span class="badge badge-default">Maven</span>
-                    <span class="badge badge-default">Jenkins</span>
-                    <span class="badge badge-default">Nexus</span>
-                    <span class="badge badge-default">SVN</span>
-                    <span class="badge badge-default">GIT</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Développement pour les produits assurances (IARDS)</h4>
-                <ul>
-                    <li>Développement des services métiers,</li>
-                    <li>Validation et mise en production.</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>J2EE (Java 1.5), Spring IOC, Hibernate,</li>
-                        <li>Eclipse, Maven, Jenkins, Nexus, SVN.</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">Java 5</span>
-                    <span class="badge badge-default">Spring IOC</span>
-                    <span class="badge badge-default">Hibernate</span>
-                    <span class="badge badge-default">Maven</span>
-                    <span class="badge badge-default">Jenkins</span>
-                    <span class="badge badge-default">Nexus</span>
-                    <span class="badge badge-default">SVN</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row inter-slide mb-2">
-        <div class="col-lg-5 pb-2 text-center">
-            <div class="pb-2">
-                <img src="img/picto/entreprise/logo-conseil-general.png" alt="logo societe cg83">
-            </div>
-            <h3>Février 2013 - Juin 2013</h3>
+                <h3 class="hidden-sm-down">Ministère de l'Ecologie, du Développement durable, des Transports et du
+                    Logement</h3>
 
-            <!--<h3>Ingénieur d’études et développements J2EE - Liferay</h3>-->
+                <h3 class="hidden-md-up">MEDTL</h3>
+                <h3>Secteur : Transport</h3>
+            </div>
+            <div class="col-lg-7">
+                <div class="experience pb-2">
+                    <h4>Responsable d'application et développement sur la TMA PARADES et MD, groupe
+                        d'application du
+                        SITR</h4>
+                    <ul>
+                        <li>Contact client,</li>
+                        <li>Gestion des demandes d’évolutions,</li>
+                        <li>Ecriture des spécifications fonctionnelles et techniques,</li>
+                        <li>Développement et tests unitaires,</li>
+                        <li>Validation, Recette,</li>
+                        <li>Accompagnement à la mise en production,</li>
+                        <li>Documentation utilisateurs (aide en ligne, aide au format livre)</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>J2EE : Struts 2, Spring, hibernate, JSTL, OGNL,</li>
+                            <li>JSP,CSS, Javascript, Ajax,</li>
+                            <li>SQL, PL/SQL sous TOAD,</li>
+                            <li>Base de données Oracle 10g,</li>
+                            <li>SVN, Hudson, jUnit.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">Struts 2</span>
+                        <span class="badge badge-default">Spring</span>
+                        <span class="badge badge-default">Hibernate</span>
+                        <span class="badge badge-default">JSTL</span>
+                        <span class="badge badge-default">OGNL</span>
+                        <span class="badge badge-default">JSP</span>
+                        <span class="badge badge-default">CSS</span>
+                        <span class="badge badge-default">Javascript</span>
+                        <span class="badge badge-default">Ajax</span>
+                        <span class="badge badge-default">Oracle 10g</span>
+                        <span class="badge badge-default">SQL</span>
+                        <span class="badge badge-default">PL/SQL</span>
+                        <span class="badge badge-default">Oracle 10g</span>
+                        <span class="badge badge-default">SVN</span>
+                        <span class="badge badge-default">Hudson</span>
+                        <span class="badge badge-default">jUnit</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Développement sur la TMA GRECO, PARADES et MD, groupe d’application du SITR</h4>
+                    <ul>
+                        <li>Ecriture des spécifications fonctionnelles et techniques,</li>
+                        <li>Développement et tests unitaires,</li>
+                        <li>Validation, Recette</li>
+                        <li>Accompagnement à la mise en production</li>
+                        <li>Documentation utilisateurs (aide en ligne, aide au format livre).</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>J2EE : Struts 2, Spring, Hibernate, JSTL, OGNL,</li>
+                            <li>JSP, CSS, Javascript, Ajax,</li>
+                            <li>SQL, PL/SQL sous TOAD,</li>
+                            <li>Base de données Oracle 10g,</li>
+                            <li>SVN, Hudson, jUnit.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">Struts 2</span>
+                        <span class="badge badge-default">Spring</span>
+                        <span class="badge badge-default">Hibernate</span>
+                        <span class="badge badge-default">JSTL</span>
+                        <span class="badge badge-default">OGNL</span>
+                        <span class="badge badge-default">JSP</span>
+                        <span class="badge badge-default">CSS</span>
+                        <span class="badge badge-default">Javascript</span>
+                        <span class="badge badge-default">Ajax</span>
+                        <span class="badge badge-default">Oracle 10g</span>
+                        <span class="badge badge-default">SQL</span>
+                        <span class="badge badge-default">PL/SQL</span>
+                        <span class="badge badge-default">Oracle 10g</span>
+                        <span class="badge badge-default">SVN</span>
+                        <span class="badge badge-default">Hudson</span>
+                        <span class="badge badge-default">jUnit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container slide2 py-2">
+        <div class="row">
+            <div class="col-xs-12 pb-2 mx-auto">
+                <img src="img/picto/entreprise/logo-st.png" alt="logo societe STMicroelectronics">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
+                <h2>STMicroelectronics (Rousset)</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 pb-2 text-center">
+                <h3>Avril 2009 – Septembre 2010 (apprentissage)</h3>
+                <h3>Secteur : Industriel, fabrication de composants électroniques</h3>
+            </div>
+            <div class="col-lg-7">
+                <div class="experience pb-2">
+                    <h4>Mener une campagne de tests automatisés sur les projets "PCM" et
+                        "eMILE"</h4>
+                    <ul>
+                        <li>Analyse des applications existantes,</li>
+                        <li>Formation sur les applications (autodidacte ou non),</li>
+                        <li>Conception des cas de tests UAT (User Acceptance Testing) (Test
+                            Sheet),
+                        </li>
+                        <li>Développement des tests automatisés</li>
+                        <li>Exécution en cas réel et livraison.</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>QuickTestProfessional 9.0,</li>
+                            <li>Base de données Oracle 9i.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">QTP 9.0</span>
+                        <span class="badge badge-default">Oracle 9i</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Évaluation du coût de migration d'un couple d'application (gestion
+                        de capacité de production) en Oracle 9i sur un serveur Itanium en
+                        MySQL en passant par une validation en Oracle 10g</h4>
+                    <ul>
+                        <li>Analyse des applications existantes,</li>
+                        <li>Formation sur les applications (autodidacte ou non),</li>
+                        <li>Validation des applications en Oracle 10g</li>
+                        <li>Test de porbadgee d’instruction Oracle sous MySQL</li>
+                        <li>Evaluation du cout de migration</li>
+                        <li>Production d’un document de synthèse</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>SQL, PL/SQL,TOAD,</li>
+                            <li>Oracle 9i, 10g, MySQL 5.</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">SQL</span>
+                        <span class="badge badge-default">PL/SQL</span>
+                        <span class="badge badge-default">Oracle 9i</span>
+                        <span class="badge badge-default">Oracle 10g</span>
+                        <span class="badge badge-default">MySQL 5</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Développement J2EE au sein du projet "eMILE"</h4>
+                    <ul>
+                        <li>Analyse de l’application existante,</li>
+                        <li>Etude autour de l’amélioration de l’expérience utilisateur,</li>
+                        <li>Intégration des composants AJAX (Grids, formulaire dynamique AJAX,
+                            fenêtres modales …)
+                        </li>
+                        <li>Mise à jour et mise en production à Singapour</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>J2EE/JAVA 1.6 sous Eclipse 3.4</li>
+                            <li>Framework J2EE propriétaire LiotroX</li>
+                            <li>Base de données Oracle 9i</li>
+                            <li>Framework Javascript/AJAX ExtJS 2.0 & 3.2</li>
+                            <li>ClearCase</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">Java 6</span>
+                        <span class="badge badge-default">Eclipse 3.4</span>
+                        <span class="badge badge-default">LiotroX</span>
+                        <span class="badge badge-default">Oracle 9i</span>
+                        <span class="badge badge-default">Javascript</span>
+                        <span class="badge badge-default">ExtJS</span>
+                        <span class="badge badge-default">ClearCase</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Évaluation et amélioration d'un Web Service SOA pour le projet
+                        "WIPPER"</h4>
+                    <ul>
+                        <li>Analyse du Web Service existant</li>
+                        <li>Etude d’un Web service de substitution</li>
+                        <li>Développement d’un Web service équivalent en TIBCO</li>
+                        <li>Développement d’un Web service équivalent en JAVA</li>
+                        <li>Mise en production de la solution la plus rapide</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>Solution TIBCO, TIBCO Designer, TIBCO Business Work, XML, XSLT</li>
+                            <li>Java 1.6 sous Eclipse 3.4</li>
+                            <li>Base de données Oracle 9i</li>
+                            <li>WebServices en C (gSOAP)</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">TIBCO</span>
+                        <span class="badge badge-default">XSLT</span>
+                        <span class="badge badge-default">Java 6</span>
+                        <span class="badge badge-default">Eclipse 3.4</span>
+                        <span class="badge badge-default">Oracle 9i</span>
+                        <span class="badge badge-default">C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container slide3 py-2">
+        <div class="row">
+            <div class="col-xs-12 pb-2 mx-auto">
+                <img src="img/picto/entreprise/logo-ico.png" alt="logo société i-cosoft">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
+                <h2>i-cosoft (Europôle de l’Arbois)</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 pb-2 text-center">
+                <h3>Septembre 2008 - Mars 2009 (apprentissage)</h3>
 
-            <h3 class="hidden-sm-down">Conseil général du Var</h3>
+                <!--<h3>Apprenti en Développement PHP5/J2EE</h3>-->
+                <h3>Secteur : Business intelligence pour les PMI/PME</h3>
+            </div>
+            <div class="col-lg-7">
+                <div class="experience pb-2">
+                    <h4>Développement d’un module de journalisation pour la partie
+                        background de la suite BI for IT</h4>
+                    <ul>
+                        <li>Analyse, conception, maquetbadgee du module</li>
+                        <li>Rédaction de la spécification fonctionnelle et technique</li>
+                        <li>Développement et test</li>
+                        <li>Mise en production et recette</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>PHP 5 sous Eclipse PDT (3.4)</li>
+                            <li>Base de données MySQL 5</li>
+                            <li>MySql Administrator 5.0</li>
+                            <li>Méthodologies : Merise, UML 2</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">PHP 5</span>
+                        <span class="badge badge-default">Eclipse PDT 3.4</span>
+                        <span class="badge badge-default">MySQL 5</span>
+                        <span class="badge badge-default">Merise</span>
+                        <span class="badge badge-default">UML 2</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Mise en place d’un système de versionnement au sein de l’équipe</h4>
+                    <ul>
+                        <li>Installation et mise en place du serveur SVN</li>
+                        <li>Formation de l’équipe à SVN sous Eclipse</li>
+                        <li>Rédaction d’une documentation utilisateur</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>PHP5 sous Eclipse PDT (3.4)</li>
+                            <li>SVN Server Windows</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">PHP 5</span>
+                        <span class="badge badge-default">Eclipse PDT 3.4</span>
+                        <span class="badge badge-default">SVN</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Développement d’un module de questionnaire personnalisé pour la
+                        suite BI for IT</h4>
+                    <ul>
+                        <li>Analyse, conception, maquetbadgee du module</li>
+                        <li>Rédaction de la spécification fonctionnelle et technique</li>
+                        <li>Développement de la solution avec un AJAX propriétaire + librairie
+                            Prototype
+                        </li>
+                        <li>Mise en production et recette</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>PHP5 sous Eclipse PDT (3.4)</li>
+                            <li>Base de données MySQL 5</li>
+                            <li>Librairie Javascript/Ajax Prototype 1.6.0.3</li>
+                            <li>MySql Administrator 5.0</li>
+                            <li>Méthodologies : Merise, UML 2</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">J2EE</span>
+                        <span class="badge badge-default">Eclipse PDT 3.4</span>
+                        <span class="badge badge-default">MySQL 5</span>
+                        <span class="badge badge-default">Javascript</span>
+                        <span class="badge badge-default">Merise</span>
+                        <span class="badge badge-default">UML 2</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Initiation au tableau de bord de la suite BI for IT</h4>
+                    <ul>
+                        <li>Analyse de l’existant</li>
+                        <li>Formation sur les tableaux de bord de la BI</li>
+                        <li>Début de développement en J2EE</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>J2EE sous Eclipse PDT (3.4)</li>
+                            <li>Base de données MySQL 5</li>
+                            <li>Suite Pentaho</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">J2EE</span>
+                        <span class="badge badge-default">Eclipse PDT 3.4</span>
+                        <span class="badge badge-default">MySQL 5</span>
+                        <span class="badge badge-default">Pentaho</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container slide4 py-2">
+        <div class="row">
+            <div class="col-xs-12 pb-2 mx-auto">
+                <img src="img/picto/entreprise/logo-reactis.png" alt="logo société REACTIS">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
+                <h2>Reactis (Aix-en-Provence)</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 pb-2 text-center">
+                <h3>Avril 2008 – Juillet 2008 (stage)</h3>
 
-            <h3 class="hidden-md-up">CG83</h3>
-            <h5>Secteur : Conseil général</h5>
-        </div>
-        <div class="col-lg-7">
-            <div class="experience pb-2">
-                <h4>Evolution du site internet du CG 83</h4>
-                <ul>
-                    <li>Spécification technique,</li>
-                    <li>Validation et mise en production de l’ensemble.</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>Liferay 5.2, Java, Web (JSP/Sass/Javascript/jQuery),</li>
-                        <li>Eclipse, Ant, GIT.</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">Liferay 5.2</span>
-                    <span class="badge badge-default">JSP</span>
-                    <span class="badge badge-default">Sass</span>
-                    <span class="badge badge-default">Javascript</span>
-                    <span class="badge badge-default">jQuery</span>
-                    <span class="badge badge-default">Eclipse</span>
-                    <span class="badge badge-default">Ant</span>
-                    <span class="badge badge-default">GIT</span>
-                </div>
+                <!--               <h3>Sbadgeiaire en développement web professionnel
+                                   JAVA/J2EE</h3>-->
+                <h3>Secteur : Services Informatiques (SSII)</h3>
             </div>
-            <div class="experience pb-2">
-                <h4>Mise en place de l’intranet du CG 83</h4>
-                <ul>
-                    <li>Spécification fonctionnelle,</li>
-                    <li>Paramétrage de fonctionnalités de l’intranet,</li>
-                    <li>Mise en place d’un Hook (customisation profonde de Liferay),</li>
-                    <li>Développement d’une Portlet de synchronisation pour les utilisateurs et les
-                        organisations,
-                    </li>
-                    <li>Validation et mise en production de l’ensemble.</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
+            <div class="col-lg-7">
+                <div class="experience pb-2">
+                    <h4>Conception et mise en place d’évolution dans le projet "SAM" pour
+                        le Ministère du Développement durable</h4>
                     <ul>
-                        <li>Liferay 6, Spring MVC, Java, Web (JSP/SASS/Javascript/jQuery),</li>
-                        <li>Eclipse, Maven, GIT, Jenkins, Nexus.</li>
+                        <li>Appréhender l’environnement fonctionnel</li>
+                        <li>Participation à la conception</li>
+                        <li>Développement de la mise à jour</li>
+                        <li>Participation à l’exécution des scénarios de recette</li>
+                        <li>Formalisation et documentation des résultats des campagnes de test</li>
                     </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>J2EE sous Eclipse 3.2</li>
+                            <li>Base de données Oracle 9i</li>
+                            <li>Serveur Tomcat 5.0</li>
+                            <li>Norme ACAÏ, base de développement PANDA</li>
+                            <li>Struts 1 & 2, Hibernate,</li>
+                            <li>Notion d’accessibilité poussée</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">J2EE</span>
+                        <span class="badge badge-default">Eclipse 3.2</span>
+                        <span class="badge badge-default">Struts 1</span>
+                        <span class="badge badge-default">Struts 2</span>
+                        <span class="badge badge-default">Hibernate</span>
+                        <span class="badge badge-default">Tomcat 5.0</span>
+                        <span class="badge badge-default">Oracle 9i</span>
+                        <span class="badge badge-default">ACAÏ</span>
+                        <span class="badge badge-default">PANDA</span>
+                    </div>
                 </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">Liferay 6</span>
-                    <span class="badge badge-default">Spring MVC</span>
-                    <span class="badge badge-default">JSP</span>
-                    <span class="badge badge-default">Sass</span>
-                    <span class="badge badge-default">Javascript</span>
-                    <span class="badge badge-default">jQuery</span>
-                    <span class="badge badge-default">Eclipse</span>
-                    <span class="badge badge-default">Maven</span>
-                    <span class="badge badge-default">GIT</span>
-                    <span class="badge badge-default">Jenkins</span>
-                    <span class="badge badge-default">Nexus</span>
+                <div class="experience pb-2">
+                    <h4>Développement de la campagne de tests unitaires sur le projet "FIMS" pour
+                        la société Docsea</h4>
+                    <ul>
+                        <li>Développement des tests unitaires de la couche donnée</li>
+                        <li>Développement des tests unitaires de la couche métier</li>
+                        <li>Mise en place d’un moteur d’intégration CruiseControl</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>JAVA, Eclipse 3.2,</li>
+                            <li>Base de donnée PostgreSQL</li>
+                            <li>Serveur Tomcat 5.5</li>
+                            <li>Struts 2, Spring IOC, iBatis 2.3</li>
+                            <li>JUnit, JMoke 2</li>
+                            <li>CruiseControle 2.7.2</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">J2EE</span>
+                        <span class="badge badge-default">Eclipse 3.2</span>
+                        <span class="badge badge-default">Struts 2</span>
+                        <span class="badge badge-default">Spring IOC</span>
+                        <span class="badge badge-default">Tomcat 5.5</span>
+                        <span class="badge badge-default">iBatis 2.3</span>
+                        <span class="badge badge-default">JUnit</span>
+                        <span class="badge badge-default">JMoke 2</span>
+                        <span class="badge badge-default">PostgreSQL</span>
+                        <span class="badge badge-default">CruiseControle 2.7.2</span>
+                    </div>
+                </div>
+                <div class="experience pb-2">
+                    <h4>Participation au développement d’un système d’aide à la
+                        documentation pour Eurocopter</h4>
+                    <ul>
+                        <li>Développement d’une partie de l’interface</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>J2EE, Eclipse 3.2,</li>
+                            <li>Base de données Oracle 9i</li>
+                            <li>Serveur Tomcat 5.0</li>
+                            <li>Struts 2, Hibernate</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">J2EE</span>
+                        <span class="badge badge-default">Eclipse 3.2</span>
+                        <span class="badge badge-default">Struts 2</span>
+                        <span class="badge badge-default">Hibernate</span>
+                        <span class="badge badge-default">Tomcat 5.0</span>
+                        <span class="badge badge-default">Oracle 9i</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-5 pb-2 text-center">
-            <div class="pb-2">
-                <img src="img/picto/entreprise/logo-ministere.png" alt="logo societe ministere">
+    <div class="container slide5 py-2">
+        <div class="row">
+            <div class="col-xs-12 pb-2 mx-auto">
+                <img src="img/picto/entreprise/logo-neodoc.png" alt="logo société NeoDoc">
             </div>
-            <h3>Octobre 2010 - Juin 2013</h3>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
+                <h2>NeoDoc (Europôle de l’Arbois)</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 pb-2 text-center">
+                <h3>Avril 2007 – Juillet 2007 (stage)</h3>
 
-            <!--<h3>Ingénieur d’études et développements J2EE</h3>-->
-
-            <h3 class="hidden-sm-down">Ministère de l'Ecologie, du Développement durable, des Transports et du
-                Logement</h3>
-
-            <h3 class="hidden-md-up">MEDTL</h3>
-            <h5>Secteur : Transport</h5>
-        </div>
-        <div class="col-lg-7">
-            <div class="experience pb-2">
-                <h4>Responsable d'application et développement sur la TMA PARADES et MD, groupe
-                    d'application du
-                    SITR</h4>
-                <ul>
-                    <li>Contact client,</li>
-                    <li>Gestion des demandes d’évolutions,</li>
-                    <li>Ecriture des spécifications fonctionnelles et techniques,</li>
-                    <li>Développement et tests unitaires,</li>
-                    <li>Validation, Recette,</li>
-                    <li>Accompagnement à la mise en production,</li>
-                    <li>Documentation utilisateurs (aide en ligne, aide au format livre)</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>J2EE : Struts 2, Spring, hibernate, JSTL, OGNL,</li>
-                        <li>JSP,CSS, Javascript, Ajax,</li>
-                        <li>SQL, PL/SQL sous TOAD,</li>
-                        <li>Base de données Oracle 10g,</li>
-                        <li>SVN, Hudson, jUnit.</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">Struts 2</span>
-                    <span class="badge badge-default">Spring</span>
-                    <span class="badge badge-default">Hibernate</span>
-                    <span class="badge badge-default">JSTL</span>
-                    <span class="badge badge-default">OGNL</span>
-                    <span class="badge badge-default">JSP</span>
-                    <span class="badge badge-default">CSS</span>
-                    <span class="badge badge-default">Javascript</span>
-                    <span class="badge badge-default">Ajax</span>
-                    <span class="badge badge-default">Oracle 10g</span>
-                    <span class="badge badge-default">SQL</span>
-                    <span class="badge badge-default">PL/SQL</span>
-                    <span class="badge badge-default">Oracle 10g</span>
-                    <span class="badge badge-default">SVN</span>
-                    <span class="badge badge-default">Hudson</span>
-                    <span class="badge badge-default">jUnit</span>
-                </div>
+                <!--<h3>Sbadgeiaire en développement web professionnel PHP/J2EE</h3>-->
+                <h3>Secteur : Conseil, édition de documentation technique</h3>
             </div>
-            <div class="experience pb-2">
-                <h4>Développement sur la TMA GRECO, PARADES et MD, groupe d’application du SITR</h4>
-                <ul>
-                    <li>Ecriture des spécifications fonctionnelles et techniques,</li>
-                    <li>Développement et tests unitaires,</li>
-                    <li>Validation, Recette</li>
-                    <li>Accompagnement à la mise en production</li>
-                    <li>Documentation utilisateurs (aide en ligne, aide au format livre).</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
+            <div class="col-lg-7">
+                <div class="experience pb-2">
+                    <h4>Refonte du site Web de la société</h4>
                     <ul>
-                        <li>J2EE : Struts 2, Spring, Hibernate, JSTL, OGNL,</li>
-                        <li>JSP, CSS, Javascript, Ajax,</li>
-                        <li>SQL, PL/SQL sous TOAD,</li>
-                        <li>Base de données Oracle 10g,</li>
-                        <li>SVN, Hudson, jUnit.</li>
+                        <li>Télétravail dans une équipe internationale (Canada, Argentine,
+                            Allemagne, Nouvelle-Zélande, Italie, France, etc)
+                        </li>
+                        <li>Design graphique</li>
+                        <li>Implémentation multilingue</li>
+                        <li>Mise en production</li>
                     </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>PHP4, Eclipse PDT,</li>
+                            <li>CSS2, XHTML</li>
+                            <li>Photoshop CS</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">PHP4</span>
+                        <span class="badge badge-default">Eclipse PDT</span>
+                        <span class="badge badge-default">CSS2</span>
+                        <span class="badge badge-default">XHTML</span>
+                        <span class="badge badge-default">Photoshop CS</span>
+                    </div>
                 </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">Struts 2</span>
-                    <span class="badge badge-default">Spring</span>
-                    <span class="badge badge-default">Hibernate</span>
-                    <span class="badge badge-default">JSTL</span>
-                    <span class="badge badge-default">OGNL</span>
-                    <span class="badge badge-default">JSP</span>
-                    <span class="badge badge-default">CSS</span>
-                    <span class="badge badge-default">Javascript</span>
-                    <span class="badge badge-default">Ajax</span>
-                    <span class="badge badge-default">Oracle 10g</span>
-                    <span class="badge badge-default">SQL</span>
-                    <span class="badge badge-default">PL/SQL</span>
-                    <span class="badge badge-default">Oracle 10g</span>
-                    <span class="badge badge-default">SVN</span>
-                    <span class="badge badge-default">Hudson</span>
-                    <span class="badge badge-default">jUnit</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container slide2 py-2">
-    <div class="row">
-        <div class="col-xs-12 pb-2 mx-auto">
-            <img src="img/picto/entreprise/logo-st.png" alt="logo societe STMicroelectronics">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
-            <h2>STMicroelectronics (Rousset)</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-5 pb-2 text-center">
-            <h3>Avril 2009 – Septembre 2010 (apprentissage)</h3>
-            <h5>Secteur : Industriel, fabrication de composants électroniques</h5>
-        </div>
-        <div class="col-lg-7">
-            <div class="experience pb-2">
-                <h4>Mener une campagne de tests automatisés sur les projets "PCM" et
-                    "eMILE"</h4>
-                <ul>
-                    <li>Analyse des applications existantes,</li>
-                    <li>Formation sur les applications (autodidacte ou non),</li>
-                    <li>Conception des cas de tests UAT (User Acceptance Testing) (Test
-                        Sheet),
-                    </li>
-                    <li>Développement des tests automatisés</li>
-                    <li>Exécution en cas réel et livraison.</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
+                <div class="experience pb-2">
+                    <h4>Conception et développement de modules d'un logiciel libre de
+                        gestion de contenu projet "Calenco"</h4>
                     <ul>
-                        <li>QuickTestProfessional 9.0,</li>
-                        <li>Base de données Oracle 9i.</li>
+                        <li>Analyse et conception du système de versionnement du contenu</li>
+                        <li>Maquetbadgee de la solution</li>
+                        <li>Développement du système de repositery avec interface graphique</li>
                     </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">QTP 9.0</span>
-                    <span class="badge badge-default">Oracle 9i</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Évaluation du coût de migration d'un couple d'application (gestion
-                    de capacité de production) en Oracle 9i sur un serveur Itanium en
-                    MySQL en passant par une validation en Oracle 10g</h4>
-                <ul>
-                    <li>Analyse des applications existantes,</li>
-                    <li>Formation sur les applications (autodidacte ou non),</li>
-                    <li>Validation des applications en Oracle 10g</li>
-                    <li>Test de porbadgee d’instruction Oracle sous MySQL</li>
-                    <li>Evaluation du cout de migration</li>
-                    <li>Production d’un document de synthèse</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>SQL, PL/SQL,TOAD,</li>
-                        <li>Oracle 9i, 10g, MySQL 5.</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">SQL</span>
-                    <span class="badge badge-default">PL/SQL</span>
-                    <span class="badge badge-default">Oracle 9i</span>
-                    <span class="badge badge-default">Oracle 10g</span>
-                    <span class="badge badge-default">MySQL 5</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Développement J2EE au sein du projet "eMILE"</h4>
-                <ul>
-                    <li>Analyse de l’application existante,</li>
-                    <li>Etude autour de l’amélioration de l’expérience utilisateur,</li>
-                    <li>Intégration des composants AJAX (Grids, formulaire dynamique AJAX,
-                        fenêtres modales …)
-                    </li>
-                    <li>Mise à jour et mise en production à Singapour</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>J2EE/JAVA 1.6 sous Eclipse 3.4</li>
-                        <li>Framework J2EE propriétaire LiotroX</li>
-                        <li>Base de données Oracle 9i</li>
-                        <li>Framework Javascript/AJAX ExtJS 2.0 & 3.2</li>
-                        <li>ClearCase</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">Java 6</span>
-                    <span class="badge badge-default">Eclipse 3.4</span>
-                    <span class="badge badge-default">LiotroX</span>
-                    <span class="badge badge-default">Oracle 9i</span>
-                    <span class="badge badge-default">Javascript</span>
-                    <span class="badge badge-default">ExtJS</span>
-                    <span class="badge badge-default">ClearCase</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Évaluation et amélioration d'un Web Service SOA pour le projet
-                    "WIPPER"</h4>
-                <ul>
-                    <li>Analyse du Web Service existant</li>
-                    <li>Etude d’un Web service de substitution</li>
-                    <li>Développement d’un Web service équivalent en TIBCO</li>
-                    <li>Développement d’un Web service équivalent en JAVA</li>
-                    <li>Mise en production de la solution la plus rapide</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>Solution TIBCO, TIBCO Designer, TIBCO Business Work, XML, XSLT</li>
-                        <li>Java 1.6 sous Eclipse 3.4</li>
-                        <li>Base de données Oracle 9i</li>
-                        <li>WebServices en C (gSOAP)</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">TIBCO</span>
-                    <span class="badge badge-default">XSLT</span>
-                    <span class="badge badge-default">Java 6</span>
-                    <span class="badge badge-default">Eclipse 3.4</span>
-                    <span class="badge badge-default">Oracle 9i</span>
-                    <span class="badge badge-default">C</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container slide3 py-2">
-    <div class="row">
-        <div class="col-xs-12 pb-2 mx-auto">
-            <img src="img/picto/entreprise/logo-ico.png" alt="logo société i-cosoft">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
-            <h2>i-cosoft (Europôle de l’Arbois)</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-5 pb-2 text-center">
-            <h3>Septembre 2008 - Mars 2009 (apprentissage)</h3>
-
-            <!--<h3>Apprenti en Développement PHP5/J2EE</h3>-->
-            <h5>Secteur : Business intelligence pour les PMI/PME</h5>
-        </div>
-        <div class="col-lg-7">
-            <div class="experience pb-2">
-                <h4>Développement d’un module de journalisation pour la partie
-                    background de la suite BI for IT</h4>
-                <ul>
-                    <li>Analyse, conception, maquetbadgee du module</li>
-                    <li>Rédaction de la spécification fonctionnelle et technique</li>
-                    <li>Développement et test</li>
-                    <li>Mise en production et recette</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>PHP 5 sous Eclipse PDT (3.4)</li>
-                        <li>Base de données MySQL 5</li>
-                        <li>MySql Administrator 5.0</li>
-                        <li>Méthodologies : Merise, UML 2</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">PHP 5</span>
-                    <span class="badge badge-default">Eclipse PDT 3.4</span>
-                    <span class="badge badge-default">MySQL 5</span>
-                    <span class="badge badge-default">Merise</span>
-                    <span class="badge badge-default">UML 2</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Mise en place d’un système de versionnement au sein de l’équipe</h4>
-                <ul>
-                    <li>Installation et mise en place du serveur SVN</li>
-                    <li>Formation de l’équipe à SVN sous Eclipse</li>
-                    <li>Rédaction d’une documentation utilisateur</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>PHP5 sous Eclipse PDT (3.4)</li>
-                        <li>SVN Server Windows</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">PHP 5</span>
-                    <span class="badge badge-default">Eclipse PDT 3.4</span>
-                    <span class="badge badge-default">SVN</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Développement d’un module de questionnaire personnalisé pour la
-                    suite BI for IT</h4>
-                <ul>
-                    <li>Analyse, conception, maquetbadgee du module</li>
-                    <li>Rédaction de la spécification fonctionnelle et technique</li>
-                    <li>Développement de la solution avec un AJAX propriétaire + librairie
-                        Prototype
-                    </li>
-                    <li>Mise en production et recette</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>PHP5 sous Eclipse PDT (3.4)</li>
-                        <li>Base de données MySQL 5</li>
-                        <li>Librairie Javascript/Ajax Prototype 1.6.0.3</li>
-                        <li>MySql Administrator 5.0</li>
-                        <li>Méthodologies : Merise, UML 2</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">J2EE</span>
-                    <span class="badge badge-default">Eclipse PDT 3.4</span>
-                    <span class="badge badge-default">MySQL 5</span>
-                    <span class="badge badge-default">Javascript</span>
-                    <span class="badge badge-default">Merise</span>
-                    <span class="badge badge-default">UML 2</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Initiation au tableau de bord de la suite BI for IT</h4>
-                <ul>
-                    <li>Analyse de l’existant</li>
-                    <li>Formation sur les tableaux de bord de la BI</li>
-                    <li>Début de développement en J2EE</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>J2EE sous Eclipse PDT (3.4)</li>
-                        <li>Base de données MySQL 5</li>
-                        <li>Suite Pentaho</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">J2EE</span>
-                    <span class="badge badge-default">Eclipse PDT 3.4</span>
-                    <span class="badge badge-default">MySQL 5</span>
-                    <span class="badge badge-default">Pentaho</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container slide4 py-2">
-    <div class="row">
-        <div class="col-xs-12 pb-2 mx-auto">
-            <img src="img/picto/entreprise/logo-reactis.png" alt="logo société REACTIS">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
-            <h2>Reactis (Aix-en-Provence)</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-5 pb-2 text-center">
-            <h3>Avril 2008 – Juillet 2008 (stage)</h3>
-
-            <!--               <h3>Sbadgeiaire en développement web professionnel
-                               JAVA/J2EE</h3>-->
-            <h5>Secteur : Services Informatiques (SSII)</h5>
-        </div>
-        <div class="col-lg-7">
-            <div class="experience pb-2">
-                <h4>Conception et mise en place d’évolution dans le projet "SAM" pour
-                    le Ministère du Développement durable</h4>
-                <ul>
-                    <li>Appréhender l’environnement fonctionnel</li>
-                    <li>Participation à la conception</li>
-                    <li>Développement de la mise à jour</li>
-                    <li>Participation à l’exécution des scénarios de recette</li>
-                    <li>Formalisation et documentation des résultats des campagnes de test</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>J2EE sous Eclipse 3.2</li>
-                        <li>Base de données Oracle 9i</li>
-                        <li>Serveur Tomcat 5.0</li>
-                        <li>Norme ACAÏ, base de développement PANDA</li>
-                        <li>Struts 1 & 2, Hibernate,</li>
-                        <li>Notion d’accessibilité poussée</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">J2EE</span>
-                    <span class="badge badge-default">Eclipse 3.2</span>
-                    <span class="badge badge-default">Struts 1</span>
-                    <span class="badge badge-default">Struts 2</span>
-                    <span class="badge badge-default">Hibernate</span>
-                    <span class="badge badge-default">Tomcat 5.0</span>
-                    <span class="badge badge-default">Oracle 9i</span>
-                    <span class="badge badge-default">ACAÏ</span>
-                    <span class="badge badge-default">PANDA</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Développement de la campagne de tests unitaires sur le projet "FIMS" pour
-                    la société Docsea</h4>
-                <ul>
-                    <li>Développement des tests unitaires de la couche donnée</li>
-                    <li>Développement des tests unitaires de la couche métier</li>
-                    <li>Mise en place d’un moteur d’intégration CruiseControl</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>JAVA, Eclipse 3.2,</li>
-                        <li>Base de donnée PostgreSQL</li>
-                        <li>Serveur Tomcat 5.5</li>
-                        <li>Struts 2, Spring IOC, iBatis 2.3</li>
-                        <li>JUnit, JMoke 2</li>
-                        <li>CruiseControle 2.7.2</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">J2EE</span>
-                    <span class="badge badge-default">Eclipse 3.2</span>
-                    <span class="badge badge-default">Struts 2</span>
-                    <span class="badge badge-default">Spring IOC</span>
-                    <span class="badge badge-default">Tomcat 5.5</span>
-                    <span class="badge badge-default">iBatis 2.3</span>
-                    <span class="badge badge-default">JUnit</span>
-                    <span class="badge badge-default">JMoke 2</span>
-                    <span class="badge badge-default">PostgreSQL</span>
-                    <span class="badge badge-default">CruiseControle 2.7.2</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Participation au développement d’un système d’aide à la
-                    documentation pour Eurocopter</h4>
-                <ul>
-                    <li>Développement d’une partie de l’interface</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>J2EE, Eclipse 3.2,</li>
-                        <li>Base de données Oracle 9i</li>
-                        <li>Serveur Tomcat 5.0</li>
-                        <li>Struts 2, Hibernate</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">J2EE</span>
-                    <span class="badge badge-default">Eclipse 3.2</span>
-                    <span class="badge badge-default">Struts 2</span>
-                    <span class="badge badge-default">Hibernate</span>
-                    <span class="badge badge-default">Tomcat 5.0</span>
-                    <span class="badge badge-default">Oracle 9i</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container slide5 py-2">
-    <div class="row">
-        <div class="col-xs-12 pb-2 mx-auto">
-            <img src="img/picto/entreprise/logo-neodoc.png" alt="logo société NeoDoc">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
-            <h2>NeoDoc (Europôle de l’Arbois)</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-5 pb-2 text-center">
-            <h3>Avril 2007 – Juillet 2007 (stage)</h3>
-
-            <!--<h3>Sbadgeiaire en développement web professionnel PHP/J2EE</h3>-->
-            <h5>Secteur : Conseil, édition de documentation technique</h5>
-        </div>
-        <div class="col-lg-7">
-            <div class="experience pb-2">
-                <h4>Refonte du site Web de la société</h4>
-                <ul>
-                    <li>Télétravail dans une équipe internationale (Canada, Argentine,
-                        Allemagne, Nouvelle-Zélande, Italie, France, etc)
-                    </li>
-                    <li>Design graphique</li>
-                    <li>Implémentation multilingue</li>
-                    <li>Mise en production</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>PHP4, Eclipse PDT,</li>
-                        <li>CSS2, XHTML</li>
-                        <li>Photoshop CS</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">PHP4</span>
-                    <span class="badge badge-default">Eclipse PDT</span>
-                    <span class="badge badge-default">CSS2</span>
-                    <span class="badge badge-default">XHTML</span>
-                    <span class="badge badge-default">Photoshop CS</span>
-                </div>
-            </div>
-            <div class="experience pb-2">
-                <h4>Conception et développement de modules d'un logiciel libre de
-                    gestion de contenu projet "Calenco"</h4>
-                <ul>
-                    <li>Analyse et conception du système de versionnement du contenu</li>
-                    <li>Maquetbadgee de la solution</li>
-                    <li>Développement du système de repositery avec interface graphique</li>
-                </ul>
-                <div class="hidden-sm-down">
-                    <p>Environnement technique :</p>
-                    <ul>
-                        <li>J2EE, Eclipse 3, Netbeans 5.5,</li>
-                        <li>Struts 1, Hibernate , JSF,</li>
-                        <li>JackTheRabbit (JSR-270)</li>
-                    </ul>
-                </div>
-                <div class="hidden-md-up">
-                    <span class="badge badge-default">J2EE</span>
-                    <span class="badge badge-default">Eclipse 3</span>
-                    <span class="badge badge-default">Netbeans 5.5</span>
-                    <span class="badge badge-default">Struts 1</span>
-                    <span class="badge badge-default">JSF</span>
-                    <span class="badge badge-default">Hibernate</span>
-                    <span class="badge badge-default">JackTheRabbit</span>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li>J2EE, Eclipse 3, Netbeans 5.5,</li>
+                            <li>Struts 1, Hibernate , JSF,</li>
+                            <li>JackTheRabbit (JSR-270)</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span class="badge badge-default">J2EE</span>
+                        <span class="badge badge-default">Eclipse 3</span>
+                        <span class="badge badge-default">Netbeans 5.5</span>
+                        <span class="badge badge-default">Struts 1</span>
+                        <span class="badge badge-default">JSF</span>
+                        <span class="badge badge-default">Hibernate</span>
+                        <span class="badge badge-default">JackTheRabbit</span>
+                    </div>
                 </div>
             </div>
         </div>
