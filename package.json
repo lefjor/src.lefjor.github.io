@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/lefjor/lefjor.github.io#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.5"
+    "bootstrap": "^4.0.0-alpha.6"
   },
   "devDependencies": {
     "browser-sync": "^2.18.2",
