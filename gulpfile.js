@@ -76,6 +76,13 @@ gulp.task('browser-sync', function () {
 });
 
 /**
+ * Inject Js into html
+ */
+gulp.task('build:js', function (){
+
+});
+
+/**
  * Compile less to css
  * @return {Stream}
  */

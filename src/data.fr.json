@@ -1,0 +1,24 @@
+{
+  "entreprises": [
+    {
+      "nom": "Reactis",
+      "localite": "Aix-en-provence",
+      "sourceImage": "img/picto/entreprise/logo-reactis.png",
+      "alt": "logo société REACTIS",
+      "type": "SSII",
+      "missions": [
+        {
+          "client": "",
+          "clientCourt" : "",
+          "date" : "",
+          "secteur" : "",
+          "experiences" : [
+
+          ]
+        },
+        {
+        }
+      ]
+    }
+  ]
+}
