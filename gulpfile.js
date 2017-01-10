@@ -31,7 +31,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg'], 'build:html', 'inline:css', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg'], 'build:html', 'build:js', 'inline:css', 'watch');
 });
 
 /**
@@ -79,7 +79,8 @@ gulp.task('browser-sync', function () {
  * Inject Js into html
  */
 gulp.task('build:js', function (){
-
+    return gulp.src('src/js/**.js')
+        .pipe(gulp.dest('dist/js'));
 });
 
 /**
@@ -166,6 +167,7 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch(config.directory.srcHtml, ['build:html']);
     gulp.watch(config.directory.srcImg, ['build:img']);
     gulp.watch(config.directory.srcIco, ['build:ico']);
+    gulp.watch('src/js/**.js', ['build:js']);
 
-    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico'], browserSync.reload);
+    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico', './dist/js/**.js'], browserSync.reload);
 });

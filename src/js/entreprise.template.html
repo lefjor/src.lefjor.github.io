@@ -1,0 +1,47 @@
+<div class="container slide1 py-2">
+    <div class="row">
+        <div class="col-xs-12 pb-2 mx-auto">
+            <img ng-src="img/picto/entreprise/logo-{{codeEntreprise}}.png" alt="{{alt}}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
+            <h2>{{nom}} ({{localite}})</h2>
+        </div>
+    </div>
+    <div ng-if="missions">
+        <div ng-repeat="mission in missions" class="row inter-slide mb-2">
+            <div class="col-lg-5 pb-2 text-center">
+                <div class="pb-2">
+                    <img ng-src="img/picto/entreprise/logo-{{mission.codeEntreprise}}.png" alt="{{mission.alt}}">
+                </div>
+                <h3>{{mission.date}}</h3>
+
+                <h3 class="hidden-sm-down">{{mission.client}}</h3>
+
+                <h3 class="hidden-md-up">{{mission.clientCourt}}</h3>
+                <h5>Secteur : {{mission.secteur}}</h5>
+            </div>
+            <div class="col-lg-7">
+                <div ng-repeat="exp in missions.experiences" class="experience pb-2">
+                    <h4>{{exp.title}}</h4>
+                    <ul>
+                        <li ng-repeat="fonctionnel in exp.fonctionnels">{{fonctionnel}}</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li ng-repeat="techno in exp.technos">{{techno}}</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span ng-repeat="techno in exp.technos" class="badge badge-default">{{techno}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="experiences">
+
+    </div>
+</div>

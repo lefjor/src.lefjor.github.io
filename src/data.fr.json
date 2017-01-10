@@ -2,6 +2,7 @@
   "entreprises": [
     {
       "nom": "Reactis",
+      "codeEntreprise" : "reactis",
       "localite": "Aix-en-provence",
       "sourceImage": "img/picto/entreprise/logo-reactis.png",
       "alt": "logo société REACTIS",
@@ -10,16 +11,18 @@
         {
           "client": "Association pour le développement du service notarial",
           "clientCourt": "ADSN",
+          "codeEntreprise" : "adsn",
+          "alt" : "logo societe adsn",
           "date": "Depuis Novembre 2016",
           "secteur": "Service du notariat",
           "experiences": [
             {
               "title": "Développement du site immobilier.notaires.fr",
-              "fonctionnel": [
+              "fonctionnels": [
                 "Développement des services REST (micro-service), modules AngularJS",
                 "Tests unitaires, validation et mise en intégration"
               ],
-              "techno": [
+              "technos": [
                 "Java 8, Eclipse STS, Maven, Jenkins, Nexus, SpringBoot, SpringBatch, JPA",
                 "CMS Drupal 7.15",
                 "WebStorm, AngularJS 1.5, Grunt",
@@ -34,14 +37,14 @@
               "experiences": [
                 {
                   "title": "Développement du nouveau service de recherche pour le projet refonte du poste de travail MyWay",
-                  "fonctionnel": [
+                  "fonctionnels": [
                     "Architecture, gestion du projet (Scrum master),",
                     "Pilotage de 2 ressources en mode Agile,",
                     "Développement des services REST de recherche,",
                     "Développement de la couche présentation,",
                     "Validation et mise en production."
                   ],
-                  "techno": [
+                  "technos": [
                     "Java 7, Jboss, Maven, Eclipse,",
                     "Solution Google Search Appliance (7.2, 7.4),",
                     "AngularJS, TypeScript, Gulp, HTML5, LESS, Visual Studio 2013",
@@ -50,7 +53,7 @@
                 },
                 {
                   "title": "Responsabilité, gestion et développement d’outils pour le moteur de recherche des caisses d’épargne et IT-CE",
-                  "fonctionnel": [
+                  "fonctionnels": [
                     "Prise en charge du projet,",
                     "Relation client avec les caisses d’épargne,",
                     "Gestions des demandes d’évolutions,",
@@ -60,7 +63,7 @@
                     "Validation et mise en production,",
                     "Pilotage de 2 ressources."
                   ],
-                  "techno": [
+                  "technos": [
                     "Java 1.6 (XSL), Web (HTML5, CSS (SASS + LESS), Javascript),",
                     "Solution Google Search Appliance (6.14, 7.0, 7.2),",
                     "RHEL 6.5, Tomcat (6, 7),",
@@ -71,11 +74,11 @@
                 },
                 {
                   "title": "Développement pour les produits assurances (IARDS)",
-                  "fonctionnel": [
+                  "fonctionnels": [
                     "Développement des services métiers,",
                     "Validation et mise en production."
                   ],
-                  "techno": [
+                  "technos": [
                     "J2EE (Java 1.5), Spring IOC, Hibernate,",
                     "Eclipse, Maven, Jenkins, Nexus, SVN."
                   ]
