@@ -8,15 +8,83 @@
       "type": "SSII",
       "missions": [
         {
-          "client": "",
-          "clientCourt" : "",
-          "date" : "",
-          "secteur" : "",
-          "experiences" : [
-
+          "client": "Association pour le développement du service notarial",
+          "clientCourt": "ADSN",
+          "date": "Depuis Novembre 2016",
+          "secteur": "Service du notariat",
+          "experiences": [
+            {
+              "title": "Développement du site immobilier.notaires.fr",
+              "fonctionnel": [
+                "Développement des services REST (micro-service), modules AngularJS",
+                "Tests unitaires, validation et mise en intégration"
+              ],
+              "techno": [
+                "Java 8, Eclipse STS, Maven, Jenkins, Nexus, SpringBoot, SpringBatch, JPA",
+                "CMS Drupal 7.15",
+                "WebStorm, AngularJS 1.5, Grunt",
+                "MariaDB, SVN, Jira"
+              ]
+            },
+            {
+              "client": "Informatique & Technologies - Caisse d’Epargne",
+              "clientCourt": "IT-CE",
+              "date": "Juillet 2013 - Octobre 2016",
+              "secteur": "Banques et assurances",
+              "experiences": [
+                {
+                  "title": "Développement du nouveau service de recherche pour le projet refonte du poste de travail MyWay",
+                  "fonctionnel": [
+                    "Architecture, gestion du projet (Scrum master),",
+                    "Pilotage de 2 ressources en mode Agile,",
+                    "Développement des services REST de recherche,",
+                    "Développement de la couche présentation,",
+                    "Validation et mise en production."
+                  ],
+                  "techno": [
+                    "Java 7, Jboss, Maven, Eclipse,",
+                    "Solution Google Search Appliance (7.2, 7.4),",
+                    "AngularJS, TypeScript, Gulp, HTML5, LESS, Visual Studio 2013",
+                    "Jenkins, Nexus, TFS."
+                  ]
+                },
+                {
+                  "title": "Responsabilité, gestion et développement d’outils pour le moteur de recherche des caisses d’épargne et IT-CE",
+                  "fonctionnel": [
+                    "Prise en charge du projet,",
+                    "Relation client avec les caisses d’épargne,",
+                    "Gestions des demandes d’évolutions,",
+                    "Gestion de la maintenance,",
+                    "Montage de l’environnement de production",
+                    "Développement de solutions applicatives autour du projet,",
+                    "Validation et mise en production,",
+                    "Pilotage de 2 ressources."
+                  ],
+                  "techno": [
+                    "Java 1.6 (XSL), Web (HTML5, CSS (SASS + LESS), Javascript),",
+                    "Solution Google Search Appliance (6.14, 7.0, 7.2),",
+                    "RHEL 6.5, Tomcat (6, 7),",
+                    "MongoDB, Docker,",
+                    "WebStorm, NodeJS, AngularJS,",
+                    "Eclipse, Maven, Jenkins, Nexus, SVN, GIT."
+                  ]
+                },
+                {
+                  "title": "Développement pour les produits assurances (IARDS)",
+                  "fonctionnel": [
+                    "Développement des services métiers,",
+                    "Validation et mise en production."
+                  ],
+                  "techno": [
+                    "J2EE (Java 1.5), Spring IOC, Hibernate,",
+                    "Eclipse, Maven, Jenkins, Nexus, SVN."
+                  ]
+                }
+              ]
+            },
+            {
+            }
           ]
-        },
-        {
         }
       ]
     }
