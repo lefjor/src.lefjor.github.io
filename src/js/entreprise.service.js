@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('entrepriseModule').factory('entrepriseService', function ($http) {
+angular.module('app').factory('entrepriseService', function ($http) {
     return {
         getEntreprises: function () {
             console.log("entrepriseService");
-            return $http.get('../data.fr.json');
+            return $http.get('../i18n/data.fr.json');
         }
     };
 });

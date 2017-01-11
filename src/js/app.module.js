@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('app', ['ngRoute', 'entrepriseModule']);
+angular.module('app', ['ngRoute']);

@@ -8,7 +8,7 @@ angular.
 
             $routeProvider.
                 when('/', {
-                    template: '<entreprise-module></entreprise-module>'
+                    template: '<entreprise-component></entreprise-component>'
                 });
         }
     ]);

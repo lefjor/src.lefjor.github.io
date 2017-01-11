@@ -2,13 +2,18 @@
   "build": "dist/",
   "directory": {
     "sass": "src/scss/**/*.scss",
-    "srcHtml" : "src/*.html",
+    "srcIndex" : "src/*.html",
+    "srcTemplate" : "src/template/**/*.html",
     "srcHumans": "src/assets/txt/**/*.txt",
     "srcImg" : "src/img/**/*.+(png|jpg|gif)",
+    "srcJson" : "src/i18n/*.json",
     "srcSvg" : "src/img/**/*.+(svg)",
     "srcIco" : "src/img/**/*.ico",
+    "srcJs" : "src/js/**/*.js",
     "distCss": "dist/css",
     "distHumans": "dist/assets/txt/",
-    "distImg" : "dist/img"
+    "distImg" : "dist/img",
+    "distJson" : "dist/i18n",
+    "distTemplate" : "dist/template"
   }
 }
