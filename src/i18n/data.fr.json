@@ -2,7 +2,7 @@
   "entreprises": [
     {
       "nom": "Reactis",
-      "codeEntreprise" : "reactis",
+      "codeEntreprise": "reactis",
       "localite": "Aix-en-provence",
       "sourceImage": "img/picto/entreprise/logo-reactis.png",
       "alt": "logo société REACTIS",
@@ -11,8 +11,8 @@
         {
           "client": "Association pour le développement du service notarial",
           "clientCourt": "ADSN",
-          "codeEntreprise" : "adsn",
-          "alt" : "logo societe adsn",
+          "codeEntreprise": "adsn",
+          "alt": "logo societe adsn",
           "date": "Depuis Novembre 2016",
           "secteur": "Service du notariat",
           "experiences": [
@@ -28,68 +28,158 @@
                 "WebStorm, AngularJS 1.5, Grunt",
                 "MariaDB, SVN, Jira"
               ]
-            },
+            }
+          ]
+        },
+        {
+          "client": "Informatique & Technologies - Caisse d’Epargne",
+          "clientCourt": "IT-CE",
+          "codeEntreprise": "itce",
+          "alt": "logo société it-ce",
+          "date": "Juillet 2013 - Octobre 2016",
+          "secteur": "Banques et assurances",
+          "experiences": [
             {
-              "client": "Informatique & Technologies - Caisse d’Epargne",
-              "clientCourt": "IT-CE",
-              "date": "Juillet 2013 - Octobre 2016",
-              "secteur": "Banques et assurances",
-              "experiences": [
-                {
-                  "title": "Développement du nouveau service de recherche pour le projet refonte du poste de travail MyWay",
-                  "fonctionnels": [
-                    "Architecture, gestion du projet (Scrum master),",
-                    "Pilotage de 2 ressources en mode Agile,",
-                    "Développement des services REST de recherche,",
-                    "Développement de la couche présentation,",
-                    "Validation et mise en production."
-                  ],
-                  "technos": [
-                    "Java 7, Jboss, Maven, Eclipse,",
-                    "Solution Google Search Appliance (7.2, 7.4),",
-                    "AngularJS, TypeScript, Gulp, HTML5, LESS, Visual Studio 2013",
-                    "Jenkins, Nexus, TFS."
-                  ]
-                },
-                {
-                  "title": "Responsabilité, gestion et développement d’outils pour le moteur de recherche des caisses d’épargne et IT-CE",
-                  "fonctionnels": [
-                    "Prise en charge du projet,",
-                    "Relation client avec les caisses d’épargne,",
-                    "Gestions des demandes d’évolutions,",
-                    "Gestion de la maintenance,",
-                    "Montage de l’environnement de production",
-                    "Développement de solutions applicatives autour du projet,",
-                    "Validation et mise en production,",
-                    "Pilotage de 2 ressources."
-                  ],
-                  "technos": [
-                    "Java 1.6 (XSL), Web (HTML5, CSS (SASS + LESS), Javascript),",
-                    "Solution Google Search Appliance (6.14, 7.0, 7.2),",
-                    "RHEL 6.5, Tomcat (6, 7),",
-                    "MongoDB, Docker,",
-                    "WebStorm, NodeJS, AngularJS,",
-                    "Eclipse, Maven, Jenkins, Nexus, SVN, GIT."
-                  ]
-                },
-                {
-                  "title": "Développement pour les produits assurances (IARDS)",
-                  "fonctionnels": [
-                    "Développement des services métiers,",
-                    "Validation et mise en production."
-                  ],
-                  "technos": [
-                    "J2EE (Java 1.5), Spring IOC, Hibernate,",
-                    "Eclipse, Maven, Jenkins, Nexus, SVN."
-                  ]
-                }
+              "title": "Développement du nouveau service de recherche pour le projet refonte du poste de travail MyWay",
+              "fonctionnels": [
+                "Architecture, gestion du projet (Scrum master),",
+                "Pilotage de 2 ressources en mode Agile,",
+                "Développement des services REST de recherche,",
+                "Développement de la couche présentation,",
+                "Validation et mise en production."
+              ],
+              "technos": [
+                "Java 7, Jboss, Maven, Eclipse,",
+                "Solution Google Search Appliance (7.2, 7.4),",
+                "AngularJS, TypeScript, Gulp, HTML5, LESS, Visual Studio 2013",
+                "Jenkins, Nexus, TFS."
               ]
             },
             {
+              "title": "Responsabilité, gestion et développement d’outils pour le moteur de recherche des caisses d’épargne et IT-CE",
+              "fonctionnels": [
+                "Prise en charge du projet,",
+                "Relation client avec les caisses d’épargne,",
+                "Gestions des demandes d’évolutions,",
+                "Gestion de la maintenance,",
+                "Montage de l’environnement de production",
+                "Développement de solutions applicatives autour du projet,",
+                "Validation et mise en production,",
+                "Pilotage de 2 ressources."
+              ],
+              "technos": [
+                "Java 1.6 (XSL), Web (HTML5, CSS (SASS + LESS), Javascript),",
+                "Solution Google Search Appliance (6.14, 7.0, 7.2),",
+                "RHEL 6.5, Tomcat (6, 7),",
+                "MongoDB, Docker,",
+                "WebStorm, NodeJS, AngularJS,",
+                "Eclipse, Maven, Jenkins, Nexus, SVN, GIT."
+              ]
+            },
+            {
+              "title": "Développement pour les produits assurances (IARDS)",
+              "fonctionnels": [
+                "Développement des services métiers,",
+                "Validation et mise en production."
+              ],
+              "technos": [
+                "J2EE (Java 1.5), Spring IOC, Hibernate,",
+                "Eclipse, Maven, Jenkins, Nexus, SVN."
+              ]
+            }
+          ]
+        },
+        {
+          "client": "Conseil général du Var",
+          "clientCourt": "CG83",
+          "codeEntreprise": "cg83",
+          "alt": "logo société cg83",
+          "date": "Février 2013 - Juin 2013",
+          "secteur": "Conseil général",
+          "experiences": [
+            {
+              "title": "Evolution du site internet du CG 83",
+              "fonctionnels": [
+                "Spécification technique,",
+                "Validation et mise en production de l’ensemble."
+              ],
+              "technos": [
+                "Liferay 5.2, Java, Web (JSP/Sass/Javascript/jQuery),",
+                "Eclipse, Ant, GIT."
+              ]
+            },
+            {
+              "title": "Mise en place de l’intranet du CG 83",
+              "fonctionnels": [
+                "Spécification fonctionnelle,",
+                "Paramétrage de fonctionnalités de l’intranet,",
+                "Mise en place d’un Hook (customisation profonde de Liferay),",
+                "Développement d’une Portlet de synchronisation pour les utilisateurs et les organisations,",
+                "Validation et mise en production de l’ensemble."
+              ],
+              "technos": [
+                "Liferay 6, Spring MVC, Java, Web (JSP/SASS/Javascript/jQuery),",
+                "Eclipse, Maven, GIT, Jenkins, Nexus."
+              ]
+            }
+          ]
+        },
+        {
+          "client": "Ministère de l'Ecologie, du Développement durable, des Transports et du Logement",
+          "clientCourt": "MEDTL",
+          "codeEntreprise": "medtl",
+          "alt": "logo société medtl",
+          "date": "Octobre 2010 - Juin 2013",
+          "secteur": "Transport",
+          "experiences": [
+            {
+              "title": "Responsable d'application et développement sur la TMA PARADES et MD, groupe d'application du SITR",
+              "fonctionnels": [
+                "Contact client,",
+                "Gestion des demandes d’évolutions,",
+                "Ecriture des spécifications fonctionnelles et techniques,",
+                "Développement et tests unitaires,",
+                "Validation, Recette,",
+                "Accompagnement à la mise en production,",
+                "Documentation utilisateurs (aide en ligne, aide au format livre)"
+              ],
+              "technos": [
+                "J2EE : Struts 2, Spring, Hibernate, JSTL, OGNL,",
+                "JSP,CSS, Javascript, Ajax,",
+                "SQL, PL/SQL sous TOAD,",
+                "Base de données Oracle 10g,",
+                "SVN, Hudson, jUnit."
+              ]
+            },
+            {
+              "title": "Développement sur la TMA GRECO, PARADES et MD, groupe d’application du SITR",
+              "fonctionnels": [
+                "Ecriture des spécifications fonctionnelles et techniques,",
+                "Développement et tests unitaires,",
+                "Validation, Recette",
+                "Accompagnement à la mise en production",
+                "Documentation utilisateurs (aide en ligne, aide au format livre)."
+              ],
+              "technos": [
+                "J2EE : Struts 2, Spring, Hibernate, JSTL, OGNL,",
+                "JSP,CSS, Javascript, Ajax,",
+                "SQL, PL/SQL sous TOAD,",
+                "Base de données Oracle 10g,",
+                "SVN, Hudson, jUnit."
+              ]
             }
           ]
         }
       ]
+    }
+    ,
+    {
+      "nom": "Reactis",
+      "codeEntreprise": "st",
+      "localite": "Aix-en-provence",
+      "sourceImage": "img/picto/entreprise/logo-reactis.png",
+      "alt": "logo société REACTIS",
+      "type": "SSII"
     }
   ]
 }

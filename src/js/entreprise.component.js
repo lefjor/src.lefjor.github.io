@@ -9,7 +9,7 @@ angular.
                 console.log("entrepriseComponent");
                 var self = this;
                 entrepriseService.getEntreprises().then(function (response) {
-                    self.entreprises = response.data;
+                    self.entreprises = response.data.entreprises;
                     console.log(self.entreprises);
                 });
             }

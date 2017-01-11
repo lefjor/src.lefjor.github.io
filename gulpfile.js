@@ -188,6 +188,7 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch(config.directory.srcImg, ['build:img']);
     gulp.watch(config.directory.srcIco, ['build:ico']);
     gulp.watch(config.directory.srcJs, ['build:js']);
+    gulp.watch(config.directory.srcJson, ['build:json']);
 
     gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico', './dist/js/**/*.js', './dist/i18n/*.json', './dist/template/**/*.html'], browserSync.reload);
 });
