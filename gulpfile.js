@@ -12,6 +12,16 @@ var $ = require('gulp-load-plugins')({lazy: true});
 var env = args.env ? 'prod' : 'dev';
 var isProd = env === 'prod';
 
+var pipes = {};
+
+pipes.orderedVendorScripts = function() {
+    return $.order(['angular.js']);
+};
+
+pipes.orderedAppScripts = function() {
+    return $.angularFilesort();
+};
+
 /**
  * List the available gulp tasks
  */
@@ -23,7 +33,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:js'], 'build:index', 'inline:css');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:js', 'build:vendor'], 'build:index', 'inline:css');
     });
 
 /**
@@ -31,7 +41,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:js'], 'build:index', 'inline:css', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:js', 'build:vendor'], 'build:index', 'inline:css', 'watch');
 });
 
 /**
@@ -76,13 +86,24 @@ gulp.task('browser-sync', function () {
 });
 
 /**
+ * Build vendor
+ */
+gulp.task('build:vendor', function () {
+    return gulp.src(['./node_modules/angular/angular.min.js', './node_modules/angular-route/angular-route.min.js'])
+        .pipe($.angularFilesort())
+        .pipe($.if(isProd,$.concat('vendor.js')))
+        .pipe(gulp.dest('dist/js/vendor'));
+});
+
+/**
  * Inject Js into html
  */
 gulp.task('build:js', function () {
     return gulp.src(config.directory.srcJs)
+        .pipe($.angularFilesort())
         .pipe($.if(isProd, $.concat('all.js')))
         .pipe($.if(isProd, $.uglify()))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/js/app'));
 });
 
 /**
@@ -163,13 +184,32 @@ gulp.task('build:humans', function () {
  * Build, optimize and inject style with HTML files
  */
 gulp.task('build:index', function () {
+    // CSS
     var injectFilesCss = gulp.src('dist/css/**/*.css');
-    var injectOptions = {
+    var injectOptionsCss = {
         addRootSlash: false,
         ignorePath: ['src', 'dist']
     };
+
+    // VENDOR NPM JS
+    var injectFilesVendorJs = gulp.src('dist/js/vendor/**/*.js');
+    var injectOptionsVendorJs = {
+        addRootSlash: false,
+        ignorePath: ['src', 'dist'],
+        name: 'npm'
+    };
+
+    // App Scripts
+    var injectFilesAppJs = gulp.src('dist/js/app/**/*.js');
+    var injectOptionsJs = {
+        addRootSlash: false,
+        ignorePath: ['src', 'dist']
+    };
+
     return gulp.src(config.directory.srcIndex)
-        .pipe($.inject(injectFilesCss, injectOptions))
+        .pipe($.inject(injectFilesCss, injectOptionsCss))
+        .pipe($.inject(injectFilesVendorJs, injectOptionsVendorJs))
+        .pipe($.inject(injectFilesAppJs, injectOptionsJs))
         .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
         .pipe(gulp.dest(config.build));
 });
