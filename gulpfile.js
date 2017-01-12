@@ -23,7 +23,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template'], 'build:index', 'inline:css');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:js'], 'build:index', 'inline:css');
     });
 
 /**
@@ -31,7 +31,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template'], 'build:index', 'build:js', 'inline:css', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:js'], 'build:index', 'inline:css', 'watch');
 });
 
 /**
@@ -80,6 +80,8 @@ gulp.task('browser-sync', function () {
  */
 gulp.task('build:js', function () {
     return gulp.src(config.directory.srcJs)
+        .pipe($.if(isProd, $.concat('all.js')))
+        .pipe($.if(isProd, $.uglify()))
         .pipe(gulp.dest('dist/js'));
 });
 
@@ -88,7 +90,7 @@ gulp.task('build:js', function () {
  */
 gulp.task('build:json', function () {
     return gulp.src(config.directory.srcJson)
-        .pipe($.if(isProd,$.jsonmin()))
+        .pipe($.if(isProd, $.jsonmin()))
         .pipe(gulp.dest(config.directory.distJson));
 });
 
@@ -161,13 +163,13 @@ gulp.task('build:humans', function () {
  * Build, optimize and inject style with HTML files
  */
 gulp.task('build:index', function () {
-    var injectFiles = gulp.src('dist/css/**/*.css');
+    var injectFilesCss = gulp.src('dist/css/**/*.css');
     var injectOptions = {
         addRootSlash: false,
         ignorePath: ['src', 'dist']
     };
     return gulp.src(config.directory.srcIndex)
-        .pipe($.inject(injectFiles, injectOptions))
+        .pipe($.inject(injectFilesCss, injectOptions))
         .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
         .pipe(gulp.dest(config.build));
 });
