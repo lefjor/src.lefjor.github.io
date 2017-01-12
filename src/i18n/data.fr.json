@@ -1,4 +1,8 @@
 {
+  "label": {
+    "secteur": "Secteur",
+    "environnement": "Environnement technique"
+  },
   "entreprises": [
     {
       "nom": "Reactis",
@@ -171,15 +175,244 @@
           ]
         }
       ]
-    }
-    ,
+    },
+    {
+      "nom": "STMicroelectronics",
+      "codeEntreprise": "st",
+      "localite": "Rousset",
+      "sourceImage": "img/picto/entreprise/logo-reactis.png",
+      "alt": "logo societe STMicroelectronics",
+      "type": "",
+      "date": "Avril 2009 – Septembre 2010",
+      "secteur": "Industriel, fabrication de composants électroniques",
+      "experiences": [
+        {
+          "title": "Mener une campagne de tests automatisés sur les projets \"PCM\" et \"eMILE\"",
+          "fonctionnels": [
+            "Analyse des applications existantes,",
+            "Formation sur les applications (autodidacte ou non),",
+            "Conception des cas de tests UAT (User Acceptance Testing) (Test Sheet),",
+            "Développement des tests automatisés",
+            "Exécution en cas réel et livraison."
+          ],
+          "technos": [
+            "QuickTestProfessional 9.0,",
+            "Base de données Oracle 9i."
+          ]
+        },
+        {
+          "title": "Évaluation du coût de migration d'un couple d'application (gestion de capacité de production) en Oracle 9i sur un serveur Itanium en MySQL en passant par une validation en Oracle 10g",
+          "fonctionnels": [
+            "Analyse des applications existantes,",
+            "Formation sur les applications (autodidacte ou non),",
+            "Validation des applications en Oracle 10g",
+            "Test de porbadgee d’instruction Oracle sous MySQL",
+            "Evaluation du cout de migration",
+            "Production d’un document de synthèse"
+          ],
+          "technos": [
+            "SQL, PL/SQL,TOAD,",
+            "Oracle 9i, 10g, MySQL 5."
+          ]
+        },
+        {
+          "title": "Développement J2EE au sein du projet \"eMILE\"",
+          "fonctionnels": [
+            "Analyse de l’application existante,",
+            "Etude autour de l’amélioration de l’expérience utilisateur,",
+            "Intégration des composants AJAX (Grids, formulaire dynamique AJAX, fenêtres modales …)",
+            "Mise à jour et mise en production à Singapour"
+          ],
+          "technos": [
+            "J2EE/JAVA 1.6 sous Eclipse 3.4",
+            "Framework J2EE propriétaire LiotroX",
+            "Base de données Oracle 9i",
+            "Framework Javascript/AJAX ExtJS 2.0 & 3.2",
+            "ClearCase"
+          ]
+        },
+        {
+          "title": "Évaluation et amélioration d'un Web Service SOA pour le projet \"WIPPER\"",
+          "fonctionnels": [
+            "Analyse du Web Service existant",
+            "Etude d’un Web service de substitution",
+            "Développement d’un Web service équivalent en TIBCO",
+            "Développement d’un Web service équivalent en JAVA",
+            "Mise en production de la solution la plus rapide"
+          ],
+          "technos": [
+            "Solution TIBCO, TIBCO Designer, TIBCO Business Work, XML, XSLT",
+            "Java 1.6 sous Eclipse 3.4",
+            "Base de données Oracle 9i",
+            "WebServices en C (gSOAP)"
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "i-cosoft",
+      "codeEntreprise": "icosoft",
+      "localite": "Europôle de l’Arbois",
+      "sourceImage": "img/picto/entreprise/logo-reactis.png",
+      "alt": "logo societe i-cosoft",
+      "type": "",
+      "date": "Septembre 2008 - Mars 2009 (apprentissage)",
+      "secteur": "Business intelligence pour les PMI/PME",
+      "experiences": [
+        {
+          "title": "Mise en place d’un système de versionnement au sein de l’équipe",
+          "fonctionnels": [
+            "Analyse, conception, maquetbadgee du module",
+            "Rédaction de la spécification fonctionnelle et technique",
+            "Développement et test",
+            "Mise en production et recette"
+          ],
+          "technos": [
+            "PHP 5 sous Eclipse PDT (3.4)",
+            "Base de données MySQL 5",
+            "MySql Administrator 5.0",
+            "Méthodologies : Merise, UML 2"
+          ]
+        },
+        {
+          "title": "Mise en place d’un système de versionnement au sein de l’équipe",
+          "fonctionnels": [
+            "Installation et mise en place du serveur SVN",
+            "Formation de l’équipe à SVN sous Eclipse",
+            "Rédaction d’une documentation utilisateur"
+          ],
+          "technos": [
+            "PHP5 sous Eclipse PDT (3.4)",
+            "SVN Server Windows"
+          ]
+        },
+        {
+          "title": "Développement d’un module de questionnaire personnalisé pour la suite BI for IT",
+          "fonctionnels": [
+            "Analyse, conception, maquetbadgee du module",
+            "Rédaction de la spécification fonctionnelle et technique",
+            "Développement de la solution avec un AJAX propriétaire + librairie Prototype",
+            "Mise en production et recette"
+          ],
+          "technos": [
+            "PHP5 sous Eclipse PDT (3.4)",
+            "Base de données MySQL 5",
+            "Librairie Javascript/Ajax Prototype 1.6.0.3",
+            "MySql Administrator 5.0",
+            "Méthodologies : Merise, UML 2"
+          ]
+        },
+        {
+          "title": "Initiation au tableau de bord de la suite BI for IT",
+          "fonctionnels": [
+            "Analyse de l’existant",
+            "Formation sur les tableaux de bord de la BI",
+            "Début de développement en J2EE"
+          ],
+          "technos": [
+            "J2EE sous Eclipse PDT (3.4)",
+            "Base de données MySQL 5",
+            "Suite Pentaho"
+          ]
+        }
+      ]
+    },
     {
       "nom": "Reactis",
-      "codeEntreprise": "st",
-      "localite": "Aix-en-provence",
+      "codeEntreprise": "reactis",
+      "localite": "Aix-en-Provence",
       "sourceImage": "img/picto/entreprise/logo-reactis.png",
-      "alt": "logo société REACTIS",
-      "type": "SSII"
+      "alt": "logo societe Réactis",
+      "type": "",
+      "date": "Avril 2008 – Juillet 2008 (stage)",
+      "secteur": "Services Informatiques (SSII)",
+      "experiences": [
+        {
+          "title": "Conception et mise en place d’évolution dans le projet \"SAM\" pour le Ministère du Développement durable",
+          "fonctionnels": [
+            "Appréhender l’environnement fonctionnel",
+            "Participation à la conception",
+            "Développement de la mise à jour",
+            "Participation à l’exécution des scénarios de recette",
+            "Formalisation et documentation des résultats des campagnes de test"
+          ],
+          "technos": [
+            "J2EE sous Eclipse 3.2",
+            "Base de données Oracle 9i",
+            "Serveur Tomcat 5.0",
+            "Norme ACAÏ, base de développement PANDA",
+            "Struts 1 & 2, Hibernate,",
+            "Notion d’accessibilité poussée"
+          ]
+        },
+        {
+          "title": "Développement de la campagne de tests unitaires sur le projet \"FIMS\" pour la société Docsea",
+          "fonctionnels": [
+            "Développement des tests unitaires de la couche donnée",
+            "Développement des tests unitaires de la couche métier",
+            "Mise en place d’un moteur d’intégration CruiseControl"
+          ],
+          "technos": [
+            "JAVA, Eclipse 3.2,",
+            "Base de donnée PostgreSQL",
+            "Serveur Tomcat 5.5",
+            "Struts 2, Spring IOC, iBatis 2.3",
+            "JUnit, JMoke 2",
+            "CruiseControle 2.7.2"
+          ]
+        },
+        {
+          "title": "Participation au développement d’un système d’aide à la documentation pour Eurocopter",
+          "fonctionnels": [
+            "Développement d’une partie de l’interface"
+          ],
+          "technos": [
+            "J2EE, Eclipse 3.2,",
+            "Base de données Oracle 9i",
+            "Serveur Tomcat 5.0",
+            "Struts 2, Hibernate"
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "NeoDoc",
+      "codeEntreprise": "neodoc",
+      "localite": "Europôle de l’Arbois",
+      "sourceImage": "img/picto/entreprise/logo-reactis.png",
+      "alt": "logo societe STMicroelectronics",
+      "type": "",
+      "date": "Avril 2007 – Juillet 2007 (stage)",
+      "secteur": "Conseil, édition de documentation technique",
+      "experiences": [
+        {
+          "title": "Refonte du site Web de la société",
+          "fonctionnels": [
+            "Télétravail dans une équipe internationale (Canada, Argentine, Allemagne, Nouvelle-Zélande, Italie, France, etc)",
+            "Design graphique",
+            "Implémentation multilingue",
+            "Mise en production"
+          ],
+          "technos": [
+            "PHP4, Eclipse PDT,",
+            "CSS2, XHTML",
+            "Photoshop CS"
+          ]
+        },
+        {
+          "title": "Refonte du site Web de la société",
+          "fonctionnels": [
+            "Analyse et conception du système de versionnement du contenu",
+            "Maquetbadgee de la solution",
+            "Développement du système de repositery avec interface graphique"
+          ],
+          "technos": [
+            "J2EE, Eclipse 3, Netbeans 5.5,",
+            "Struts 1, Hibernate , JSF,",
+            "JackTheRabbit (JSR-270)"
+          ]
+        }
+      ]
     }
   ]
 }

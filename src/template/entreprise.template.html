@@ -1,4 +1,4 @@
-<div ng-repeat="entreprise in $ctrl.entreprises" class="container slide1 py-2">
+<div ng-repeat="entreprise in $ctrl.entreprises" class="container py-2" ng-class="entreprise.codeEntreprise">
     <div class="row">
         <div class="col-xs-12 pb-2 mx-auto">
             <img ng-src="img/picto/entreprise/logo-{{entreprise.codeEntreprise}}.png" alt="{{alt}}">
@@ -42,6 +42,28 @@
         </div>
     </div>
     <div ng-if="entreprise.experiences">
-
+        <div class="row">
+            <div class="col-lg-5 pb-2 text-center">
+                <h3>{{entreprise.date}}</h3>
+                <h5>Secteur : {{entreprise.secteur}}</h5>
+            </div>
+            <div class="col-lg-7">
+                <div ng-repeat="exp in entreprise.experiences" class="experience pb-2">
+                    <h4>{{exp.title}}</h4>
+                    <ul>
+                        <li ng-repeat="fonctionnel in exp.fonctionnels">{{fonctionnel}}</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>Environnement technique :</p>
+                        <ul>
+                            <li ng-repeat="techno in exp.technos">{{techno}}</li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up">
+                        <span ng-repeat="techno in exp.technos" class="badge badge-default">{{techno}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
