@@ -22,12 +22,12 @@
   "homepage": "https://github.com/lefjor/lefjor.github.io#readme",
   "dependencies": {
     "angular": "^1.6.1",
-    "bootstrap": "^4.0.0-alpha.6",
-    "typescript": "^2.1.4"
+    "angular-route": "^1.6.1",
+    "bootstrap": "^4.0.0-alpha.6"
   },
   "devDependencies": {
-    "angular-route": "^1.6.1",
     "browser-sync": "^2.18.2",
+    "browserify": "^13.3.0",
     "critical": "^0.8.1",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -50,12 +50,14 @@
     "gulp-rimraf": "^0.2.1",
     "gulp-sass": "^3.0.0",
     "gulp-sourcemaps": "^1.9.1",
+    "gulp-streamify": "^1.0.2",
     "gulp-task-listing": "^1.0.1",
     "gulp-uglify": "^2.0.0",
     "gulp-uncss": "^1.0.6",
     "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^5.0.0",
     "run-sequence": "^1.2.2",
+    "vinyl-source-stream": "^1.1.0",
     "yargs": "^6.5.0"
   }
 }

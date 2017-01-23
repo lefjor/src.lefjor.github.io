@@ -1,14 +1,9 @@
 'use strict';
 
-angular.
-    module('app').
-    config(['$locationProvider', '$routeProvider',
-        function config($locationProvider, $routeProvider) {
-            $locationProvider.hashPrefix('!');
+module.exports = ['$routeProvider', function ($routeProvider) {
 
-            $routeProvider.
-                when('/', {
-                    template: '<entreprise-component></entreprise-component>'
-                });
-        }
-    ]);
+    $routeProvider.
+        when('/', {
+            template: '<entreprise-component></entreprise-component>'
+        });
+}];
