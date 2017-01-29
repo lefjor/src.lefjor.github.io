@@ -90,7 +90,7 @@ gulp.task('browserify', function () {
     var bundleStream = browserify('src/js/app.js').bundle();
     bundleStream
         .pipe(source('app.js'))
-        //.pipe($.if(isProd, $.streamify($.uglify())))
+        .pipe($.if(isProd, $.streamify($.uglify())))
         .pipe($.rename('bundle.js'))
         .pipe(gulp.dest('dist/js'))
 });
@@ -193,7 +193,7 @@ gulp.task('build:index', function () {
     return gulp.src(config.directory.srcIndex)
         .pipe($.inject(injectFilesCss, injectOptionsCss))
         .pipe($.inject(injectFilesAppJs, injectOptionsJs))
-        //.pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
+        .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
         .pipe(gulp.dest(config.build));
 });
 
@@ -202,7 +202,7 @@ gulp.task('build:index', function () {
  */
 gulp.task('build:template', function () {
     return gulp.src(config.directory.srcTemplate)
-        //.pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
+        .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
         .pipe(gulp.dest(config.directory.distTemplate));
 });
 

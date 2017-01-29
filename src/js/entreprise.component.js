@@ -4,9 +4,8 @@ var _= require("underscore");
 
 module.exports = {
     templateUrl: '../template/entreprise.template.html',
-    controller: entrepriseComponent
+    controller: ['entrepriseService', entrepriseComponent]
 };
-
 
 function entrepriseComponent(entrepriseService) {
     var self = this;
