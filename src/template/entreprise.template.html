@@ -1,0 +1,73 @@
+<div ng-repeat="entreprise in $ctrl.entreprises" class="container py-2" ng-class="entreprise.codeEntreprise">
+    <div class="row">
+        <div class="col-xs-12 pb-2 mx-auto">
+            <img ng-src="img/picto/entreprise/logo-{{entreprise.codeEntreprise}}.png" alt="{{alt}}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 hidden-sm-down pb-2 mx-auto">
+            <h2>{{entreprise.nom}} ({{entreprise.localite}})</h2>
+        </div>
+    </div>
+    <div ng-if="entreprise.missions">
+        <div ng-repeat="mission in entreprise.missions" class="row inter-slide mb-2 pt-2">
+            <div class="col-lg-5 text-center">
+                <div class="pb-2">
+                    <img ng-src="img/picto/entreprise/logo-{{mission.codeEntreprise}}.png" alt="{{mission.alt}}">
+                </div>
+                <h3>{{mission.date}}</h3>
+
+                <h3 class="hidden-sm-down">{{mission.client}}</h3>
+
+                <h3 class="hidden-md-up">{{mission.clientCourt}}</h3>
+                <h5>{{$ctrl.label.secteur}} : {{mission.secteur}}</h5>
+            </div>
+            <div class="col-lg-7">
+                <div ng-repeat="exp in mission.experiences" class="experience pb-2">
+                    <h4>{{exp.title}}</h4>
+                    <ul>
+                        <li ng-repeat="fonctionnel in exp.fonctionnels">{{fonctionnel}}{{$last ? '.' : ', '}}</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>{{$ctrl.label.environnement}} :</p>
+                        <ul>
+                            <li ng-repeat="ligne in exp.technos">
+                                <span ng-repeat="techno in ligne">{{techno}}{{$last ? '' : ', '}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up pb-2" ng-init="technos = $ctrl._.flatten(exp.technos)">
+                        <span class="badge badge-default mr-1" ng-repeat="techno in technos">{{techno}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="entreprise.experiences">
+        <div class="row">
+            <div class="col-lg-5 pb-2 text-center">
+                <h3>{{entreprise.date}}</h3>
+                <h5>{{$ctrl.label.secteur}} : {{entreprise.secteur}}</h5>
+            </div>
+            <div class="col-lg-7">
+                <div ng-repeat="exp in entreprise.experiences" class="experience pb-2">
+                    <h4>{{exp.title}}</h4>
+                    <ul>
+                        <li ng-repeat="fonctionnel in exp.fonctionnels">{{fonctionnel}}{{$last ? '.' : ', '}}</li>
+                    </ul>
+                    <div class="hidden-sm-down">
+                        <p>{{$ctrl.label.environnement}} :</p>
+                        <ul>
+                            <li ng-repeat="ligne in exp.technos">
+                                <span ng-repeat="techno in ligne">{{techno}}{{$last ? '' : ', '}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hidden-md-up pb-2" ng-init="technos = $ctrl._.flatten(exp.technos)">
+                        <span class="badge badge-default mr-1" ng-repeat="techno in technos">{{techno}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

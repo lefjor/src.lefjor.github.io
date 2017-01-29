@@ -38,19 +38,19 @@ body {
   color: $textColorSlideBeforeAfter;
 }
 
-.slide1, .slide4 {
+.reactis {
   @include slides(#2F2F2F, #486ABA, #486ABA);
 }
 
-.slide2 {
+.st {
   @include slides(#8a8683, #0A7EFC, #0A7EFC);
 }
 
-.slide3 {
+.icosoft {
   @include slides(#2B343D, #4CBADD, #4CBADD);
 }
 
-.slide5 {
+.neodoc {
   @include slides(#65646A, #F4901D, #F4901D);
 }
 

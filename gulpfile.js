@@ -1,16 +1,27 @@
 /* File: gulpfile.js */
-var config = require('./gulp.config');
-var args = require('yargs').argv;
-var del = require('del');
-var runSeq = require('run-sequence');
-var gulp = require('gulp'),
-    pngquant = require('imagemin-pngquant');
-var critical = require('critical').stream;
-var browserSync = require('browser-sync').create();
-var $ = require('gulp-load-plugins')({lazy: true});
+var config = require('./gulp.config'),
+    args = require('yargs').argv,
+    del = require('del'),
+    runSeq = require('run-sequence'),
+    gulp = require('gulp'),
+    pngquant = require('imagemin-pngquant'),
+    browserify = require('browserify'),
+    critical = require('critical').stream;
+source = require('vinyl-source-stream'),
+    browserSync = require('browser-sync').create(),
+    $ = require('gulp-load-plugins')({lazy: true});
+env = args.env ? 'prod' : 'dev',
+    isProd = env === 'prod';
 
-var env = args.env ? 'prod' : 'dev';
-var isProd = env === 'prod';
+var pipes = {};
+
+pipes.orderedVendorScripts = function () {
+    return $.order(['angular.js']);
+};
+
+pipes.orderedAppScripts = function () {
+    return $.angularFilesort();
+};
 
 /**
  * List the available gulp tasks
@@ -23,7 +34,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg'], 'build:html', 'inline:css');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'browserify'], 'build:index', 'inline:css');
     });
 
 /**
@@ -31,7 +42,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg'], 'build:html', 'inline:css', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'browserify'], 'build:index', 'inline:css', 'watch');
 });
 
 /**
@@ -73,6 +84,34 @@ gulp.task('browser-sync', function () {
             baseDir: 'dist'
         }
     });
+});
+
+/**
+ * Build vendor
+ */
+gulp.task('build:vendor', function () {
+    return gulp.src(['./node_modules/angular/angular.min.js', './node_modules/angular-route/angular-route.min.js'])
+        .pipe($.angularFilesort())
+        .pipe($.if(isProd, $.concat('vendor.js')))
+        .pipe(gulp.dest('dist/js/vendor'));
+});
+
+gulp.task('browserify', function () {
+    var bundleStream = browserify('src/js/app.js').bundle()
+    bundleStream
+        .pipe(source('app.js'))
+        .pipe($.if(isProd, $.streamify($.uglify())))
+        .pipe($.rename('bundle.js'))
+        .pipe(gulp.dest('dist/js'))
+});
+
+/**
+ * Minify Json and copy to dist
+ */
+gulp.task('build:json', function () {
+    return gulp.src(config.directory.srcJson)
+        .pipe($.if(isProd, $.jsonmin()))
+        .pipe(gulp.dest(config.directory.distJson));
 });
 
 /**
@@ -118,6 +157,7 @@ gulp.task('build:img', function () {
  */
 gulp.task('build:svg', function () {
     return gulp.src(config.directory.srcSvg)
+        .pipe($.changed(config.directory.distImg))
         .pipe(gulp.dest(config.directory.distImg));
 });
 
@@ -142,23 +182,45 @@ gulp.task('build:humans', function () {
 /**
  * Build, optimize and inject style with HTML files
  */
-gulp.task('build:html', function () {
-    var injectFiles = gulp.src('dist/css/**/*.css');
-    var injectOptions = {
+gulp.task('build:index', function () {
+    // CSS
+    var injectFilesCss = gulp.src('dist/css/**/*.css');
+    var injectOptionsCss = {
         addRootSlash: false,
         ignorePath: ['src', 'dist']
     };
-    return gulp.src(config.directory.srcHtml)
-        .pipe($.inject(injectFiles, injectOptions))
+
+    // App Scripts
+    var injectFilesAppJs = gulp.src('dist/js/**/*.js');
+    var injectOptionsJs = {
+        addRootSlash: false,
+        ignorePath: ['src', 'dist']
+    };
+
+    return gulp.src(config.directory.srcIndex)
+        .pipe($.inject(injectFilesCss, injectOptionsCss))
+        .pipe($.inject(injectFilesAppJs, injectOptionsJs))
         .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
         .pipe(gulp.dest(config.build));
 });
 
+/**
+ * Minify & build HTML template files
+ */
+gulp.task('build:template', function () {
+    return gulp.src(config.directory.srcTemplate)
+        .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
+        .pipe(gulp.dest(config.directory.distTemplate));
+});
+
 gulp.task('watch', ['browser-sync'], function () {
     gulp.watch(config.directory.sass, ['build:css']);
-    gulp.watch(config.directory.srcHtml, ['build:html']);
+    gulp.watch(config.directory.srcIndex, ['build:index']);
+    gulp.watch(config.directory.srcTemplate, ['build:template']);
     gulp.watch(config.directory.srcImg, ['build:img']);
     gulp.watch(config.directory.srcIco, ['build:ico']);
+    gulp.watch(config.directory.srcJs, ['browserify']);
+    gulp.watch(config.directory.srcJson, ['build:json']);
 
-    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico'], browserSync.reload);
+    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico', './dist/js/**/*.js', './dist/i18n/*.json', './dist/template/**/*.html'], browserSync.reload);
 });
