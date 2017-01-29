@@ -86,21 +86,11 @@ gulp.task('browser-sync', function () {
     });
 });
 
-/**
- * Build vendor
- */
-gulp.task('build:vendor', function () {
-    return gulp.src(['./node_modules/angular/angular.min.js', './node_modules/angular-route/angular-route.min.js'])
-        .pipe($.angularFilesort())
-        .pipe($.if(isProd, $.concat('vendor.js')))
-        .pipe(gulp.dest('dist/js/vendor'));
-});
-
 gulp.task('browserify', function () {
-    var bundleStream = browserify('src/js/app.js').bundle()
+    var bundleStream = browserify('src/js/app.js').bundle();
     bundleStream
         .pipe(source('app.js'))
-        .pipe($.if(isProd, $.streamify($.uglify())))
+        //.pipe($.if(isProd, $.streamify($.uglify())))
         .pipe($.rename('bundle.js'))
         .pipe(gulp.dest('dist/js'))
 });
@@ -124,16 +114,19 @@ gulp.task('build:css', function () {
         .pipe($.plumber())
         .pipe($.if(!isProd, $.sourcemaps.init()))
         .pipe($.if(isProd, $.uncss({
-            html: ['src/*.html']
+            html: ['src/**/*.html'],
+            ignore: [
+                new RegExp('.*reactis.*'),
+                new RegExp('.*st.*'),
+                new RegExp('.*icosoft.*'),
+                new RegExp('.*neodoc.*')]
         })))
         .pipe($.if(isProd, $.rename({
             suffix: '.min'
         })))
         .pipe($.if(isProd, $.autoprefixer()))
         .pipe($.if(isProd, $.csso()))
-        //.pipe($.if(isProd, $.filter))
         .pipe($.if(!isProd, $.sourcemaps.write('.', {includeContent: false, sourceRoot: 'src/scss'})))
-        //.pipe($.if(isProd, $.filter.restore))
         .pipe(gulp.dest('dist/css'));
 });
 
@@ -200,7 +193,7 @@ gulp.task('build:index', function () {
     return gulp.src(config.directory.srcIndex)
         .pipe($.inject(injectFilesCss, injectOptionsCss))
         .pipe($.inject(injectFilesAppJs, injectOptionsJs))
-        .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
+        //.pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
         .pipe(gulp.dest(config.build));
 });
 
@@ -209,7 +202,7 @@ gulp.task('build:index', function () {
  */
 gulp.task('build:template', function () {
     return gulp.src(config.directory.srcTemplate)
-        .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
+        //.pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
         .pipe(gulp.dest(config.directory.distTemplate));
 });
 
