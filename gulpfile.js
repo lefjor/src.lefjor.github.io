@@ -34,7 +34,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'browserify'], 'build:index', 'inline:css');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'inline:css');
     });
 
 /**
@@ -42,7 +42,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'browserify'], 'build:index', 'inline:css', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'inline:css', 'watch');
 });
 
 /**
@@ -180,6 +180,15 @@ gulp.task('build:humans', function () {
 });
 
 /**
+ * Build manifest for WPA
+ */
+gulp.task('build:manifest', function () {
+    return gulp.src(config.directory.srcManifest)
+        .pipe($.changed(config.directory.srcManifest))
+        .pipe(gulp.dest(config.directory.distManifest));
+});
+
+/**
  * Build, optimize and inject style with HTML files
  */
 gulp.task('build:index', function () {
@@ -221,6 +230,7 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch(config.directory.srcIco, ['build:ico']);
     gulp.watch(config.directory.srcJs, ['browserify']);
     gulp.watch(config.directory.srcJson, ['build:json']);
+    gulp.watch(config.directory.srcManifest, ['build:manifest']);
 
-    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico', './dist/js/**/*.js', './dist/i18n/*.json', './dist/template/**/*.html'], browserSync.reload);
+    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico', './dist/js/**/*.js', './dist/i18n/*.json', './dist/template/**/*.html', './dist/manifest.json'], browserSync.reload);
 });

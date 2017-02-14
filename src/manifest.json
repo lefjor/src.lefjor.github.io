@@ -1,0 +1,31 @@
+{
+  "short_name": "Jordan LEFEBVRE",
+  "name": "CV Jordan LEFEBVRE",
+  "dir": "ltr",
+  "background_color": "#2F2F2F",
+  "theme_color": "#2F2F2F",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/img/ico/apple-touch-icon-57x57-precomposed.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "/img/ico/apple-touch-icon-72x72-precomposed.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/img/ico/apple-touch-icon-114x114-precomposed.png",
+      "type": "image/png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "/img/ico/apple-touch-icon-144x144-precomposed.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "/"
+}
