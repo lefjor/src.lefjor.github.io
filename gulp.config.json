@@ -5,7 +5,7 @@
     "srcIndex" : "src/*.html",
     "srcTemplate" : "src/template/**/*.html",
     "srcHumans": "src/assets/txt/**/*.txt",
-    "srcManifest" : "src/manifest.json",
+    "srcManifest" : "src/*.json",
     "srcImg" : "src/img/**/*.+(png|jpg|gif)",
     "srcJson" : "src/i18n/*.json",
     "srcSvg" : "src/img/**/*.+(svg)",
