@@ -12,7 +12,7 @@
     "srcIco" : "src/img/**/*.ico",
     "srcJs" : "src/js/**/*.js",
     "distCss": "dist/css",
-    "distManifest": "dist/",
+    "distManifest": "dist",
     "distHumans": "dist/assets/txt/",
     "distImg" : "dist/img",
     "distJson" : "dist/i18n",
