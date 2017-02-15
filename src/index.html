@@ -91,7 +91,7 @@
 <script>
     if('serviceWorker' in navigator) {
         navigator.serviceWorker
-                .register('/js/bundle.js')
+                .register('sw.js')
                 .then(function() { console.log("Service Worker Registered"); });
     }
 </script>
