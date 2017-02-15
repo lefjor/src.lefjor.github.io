@@ -88,5 +88,12 @@
     ga('create', 'UA-88758710-2', 'auto');
     ga('send', 'pageview');
 </script>
+<script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                .register('/js/bundle.js')
+                .then(function() { console.log("Service Worker Registered"); });
+    }
+</script>
 </body>
 </html>
