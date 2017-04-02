@@ -34,7 +34,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'inline:css');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'inline:css', 'generate-service-worker');
     });
 
 /**
@@ -42,7 +42,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'inline:css', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'inline:css', 'generate-service-worker', 'watch');
 });
 
 /**
@@ -213,6 +213,24 @@ gulp.task('build:template', function () {
     return gulp.src(config.directory.srcTemplate)
         .pipe($.if(isProd, $.htmlmin({collapseWhitespace: true, minifyJS: true, removeComments: true})))
         .pipe(gulp.dest(config.directory.distTemplate));
+});
+
+gulp.task('generate-service-worker', function (callback) {
+    var path = require('path');
+    var swPrecache = require('sw-precache');
+    var rootDir = 'dist';
+
+    swPrecache.write(path.join(rootDir, 'sw.js'), {
+        staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,svg,json}'],
+        stripPrefix: rootDir,
+        navigateFallback: '/',
+        runtimeCaching: [{
+            urlPattern: /\/planet/,
+            handler: 'cacheFirst'
+        }],
+        verbose: true
+
+    }, callback);
 });
 
 gulp.task('watch', ['browser-sync'], function () {
