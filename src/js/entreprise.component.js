@@ -11,7 +11,7 @@ function entrepriseComponent(entrepriseService) {
     var self = this;
     self._=_;
     entrepriseService.getEntreprises().then(function (response) {
-        self.entreprises = response.data.entreprises;
-        self.label = response.data.label;
+        self.entreprises = response.entreprises;
+        self.label = response.label;
     });
 }

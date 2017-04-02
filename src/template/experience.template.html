@@ -1,0 +1,15 @@
+<h4>{{::$ctrl.experience.title}}</h4>
+<ul>
+    <li ng-repeat="fonctionnel in ::$ctrl.experience.fonctionnels">{{::fonctionnel}}{{$last ? '.' : ', '}}</li>
+</ul>
+<div class="hidden-sm-down">
+    <p>{{::$ctrl.label.environnement}} :</p>
+    <ul>
+        <li ng-repeat="ligne in ::$ctrl.experience.technos">
+            <span ng-repeat="techno in ::ligne">{{::techno}}{{$last ? '' : ', '}}</span>
+        </li>
+    </ul>
+</div>
+<div class="hidden-md-up pb-2" ng-init="technos = $ctrl._.flatten($ctrl.experience.technos)">
+    <span class="badge badge-default mr-1" ng-repeat="techno in ::technos">{{::techno}}</span>
+</div>

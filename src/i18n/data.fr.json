@@ -1,4 +1,37 @@
 {
+  "basics": {
+    "name": "Jordan LEFEBVRE",
+    "label": "Programmer",
+    "picture": "",
+    "email": "",
+    "phone": "",
+    "website": "https://lefjor.github.io",
+    "summary": "Peu de blabla allons droit au but ! Je touche à tout, j'améliore, je répare, je construis, je casse, je refais, je teste je suis ingénieur de dev et alors ? J'aimerais évoluer vers de l'architecture même si au fur et à mesure des missions j'arrive toujours à encadrer des collaborateurs et être référent sur mes projets. Ma recherche se porte sur un cadre international de préférence pour les états unis (USA) ou le royaume-uni (UK). Je parle un anglais plutôt moyen mais bon la faute à qui ? Il faut avoir la chance de pratiquer dans un cadre professionnel to improve our knowledge ! Alors allons de l'avant et tentons notre chance !",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "",
+      "countryCode": "",
+      "region": ""
+    }
+  },
+  "profiles": [
+    {
+      "network": "LinkedIn",
+      "username": "lefjor",
+      "url": "http://www.linkedin.com/in/lefjor"
+    },
+    {
+      "network": "Github",
+      "username": "lefjor",
+      "url": "https://github.com/lefjor"
+    },
+    {
+      "network": "Twitter",
+      "username": "lefjor",
+      "url": "https://twitter.com/lefjor"
+    }
+  ],
   "label": {
     "secteur": "Secteur",
     "environnement": "Environnement technique"

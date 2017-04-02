@@ -1,0 +1,32 @@
+<div class="container-fluid menu py-2">
+    <div class="row">
+        <div class="col-xs-12 mx-auto">
+            <h1>{{::$ctrl.basics.name}}</h1>
+        </div>
+    </div>
+</div>
+<div class="container-fluid slide0 hidden-sm-down">
+    <div class="row">
+        <div class="col-xs-12 text-justify">
+            <p class="mx-2">{{::$ctrl.basics.summary}}</p>
+        </div>
+    </div>
+</div>
+<div class="slides">
+    <entreprise-component></entreprise-component>
+</div>
+<div class="container-fluid slideAutre hidden-print py-2">
+    <div class="row">
+        <div class="col-xs-4 mx-auto" ng-repeat="profile in ::$ctrl.profiles track by profile.network">
+            <profile-component profile="profile"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 offset-xs-4 pt-2 mx-auto">
+            <a href="assets/txt/humans.txt">
+                <img src="img/picto/humanstxt-transparent-1ink.png"
+                     alt="Humans txt"/>
+            </a>
+        </div>
+    </div>
+</div>
