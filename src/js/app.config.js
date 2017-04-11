@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = ['$routeProvider', function ($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+module.exports = ['$routeProvider', function ($routeProvider/*, $locationProvider*/) {
+    //$locationProvider.html5Mode(true);
     
     $routeProvider.
         when('/', {
