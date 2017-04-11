@@ -17,17 +17,17 @@
   },
   "profiles": [
     {
-      "network": "LinkedIn",
+      "network": "linkedin",
       "username": "lefjor",
       "url": "http://www.linkedin.com/in/lefjor"
     },
     {
-      "network": "Github",
+      "network": "github",
       "username": "lefjor",
       "url": "https://github.com/lefjor"
     },
     {
-      "network": "Twitter",
+      "network": "twitter",
       "username": "lefjor",
       "url": "https://twitter.com/lefjor"
     }
