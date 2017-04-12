@@ -38,6 +38,10 @@ body {
   color: $textColorSlideBeforeAfter;
 }
 
+.infotel {
+  @include slides(#2F2F2F, #19509A, #19509A);
+}
+
 .reactis {
   @include slides(#2F2F2F, #486ABA, #486ABA);
 }

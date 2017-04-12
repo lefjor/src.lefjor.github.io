@@ -9,7 +9,7 @@
             <h2>{{::entreprise.nom}} ({{::entreprise.localite}})</h2>
         </div>
     </div>
-    <div ng-if="::entreprise.missions">
+    <div ng-if="entreprise.missions">
         <div ng-repeat="mission in ::entreprise.missions track by mission.codeEntreprise" class="row inter-slide mb-2 pt-2">
             <div class="col-lg-5 text-center">
                 <div class="pb-2">
@@ -18,7 +18,7 @@
                 <h3>{{::mission.date}}</h3>
                 <h3 class="hidden-sm-down">{{::mission.client}}</h3>
                 <h3 class="hidden-md-up">{{::mission.clientCourt}}</h3>
-                <h5>{{$ctrl.label.secteur}} : {{::mission.secteur}}</h5>
+                <h5>{{::$ctrl.label.secteur}} : {{::mission.secteur}}</h5>
             </div>
             <div class="col-lg-7">
                 <div ng-repeat="exp in ::mission.experiences" class="experience pb-2">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div ng-if="::entreprise.experiences">
+    <div ng-if="entreprise.experiences">
         <div class="row">
             <div class="col-lg-5 pb-2 text-center">
                 <h3>{{::entreprise.date}}</h3>

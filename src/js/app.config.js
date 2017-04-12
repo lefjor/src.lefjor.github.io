@@ -1,8 +1,6 @@
 'use strict';
 
-module.exports = ['$routeProvider', function ($routeProvider/*, $locationProvider*/) {
-    //$locationProvider.html5Mode(true);
-    
+module.exports = ['$routeProvider', function ($routeProvider) {
     $routeProvider.
         when('/', {
             template: '<resume-component></resume-component>'

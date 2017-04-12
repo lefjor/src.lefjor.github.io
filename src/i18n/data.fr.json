@@ -38,6 +38,29 @@
   },
   "entreprises": [
     {
+      "nom": "Infotel",
+      "codeEntreprise": "infotel",
+      "localite": "Aix-en-provence",
+      "sourceImage": "img/picto/entreprise/logo-infotel.png",
+      "alt": "logo société INFOTEL",
+      "type": "SSII",
+      "missions": [
+        {
+          "client": "Informatique & Technologies - Caisse d’Epargne",
+          "clientCourt": "IT-CE",
+          "codeEntreprise": "itce",
+          "alt": "logo société it-ce",
+          "date": "Depuis Avril 2017",
+          "secteur": "Banques et assurances",
+          "experiences": [
+            {
+              "title": "Maintenance pour le projet refonte du poste de travail MyWay"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "nom": "Reactis",
       "codeEntreprise": "reactis",
       "localite": "Aix-en-provence",
@@ -50,7 +73,7 @@
           "clientCourt": "ADSN",
           "codeEntreprise": "adsn",
           "alt": "logo societe adsn",
-          "date": "Depuis Novembre 2016",
+          "date": "Novembre 2016 - Mars 2017",
           "secteur": "Service du notariat",
           "experiences": [
             {
@@ -71,7 +94,7 @@
                   "JPA"
                 ],
                 [
-                  "CMSDrupal 7.15"
+                  "CMS Drupal 7.15"
                 ],
                 [
                   "WebStorm",

@@ -6,11 +6,11 @@ var config = require('./gulp.config'),
     gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     browserify = require('browserify'),
-    critical = require('critical').stream;
-source = require('vinyl-source-stream'),
+    critical = require('critical').stream,
+    source = require('vinyl-source-stream'),
     browserSync = require('browser-sync').create(),
-    $ = require('gulp-load-plugins')({lazy: true});
-env = args.env ? 'prod' : 'dev',
+    $ = require('gulp-load-plugins')({lazy: true}),
+    env = args.env ? 'prod' : 'dev',
     isProd = env === 'prod';
 
 var pipes = {};
@@ -42,7 +42,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'inline:css', 'generate-service-worker', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'watch');
 });
 
 /**
@@ -116,6 +116,7 @@ gulp.task('build:css', function () {
         .pipe($.if(isProd, $.uncss({
             html: ['src/**/*.html'],
             ignore: [
+                new RegExp('.*infotel.*'),
                 new RegExp('.*reactis.*'),
                 new RegExp('.*st.*'),
                 new RegExp('.*icosoft.*'),
