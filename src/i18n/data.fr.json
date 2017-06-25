@@ -54,7 +54,31 @@
           "secteur": "Banques et assurances",
           "experiences": [
             {
-              "title": "Maintenance pour le projet refonte du poste de travail MyWay"
+              "title": "Responsabilité de la maintenance partie transverse pour le projet refonte du poste de travail MyWay",
+              "fonctionnels": [
+                "Maintenance et évolution des diverses projets \"Brique Applicative Transverse\""
+              ],
+              "technos": [
+                [
+                  "Java 7",
+                  "Jboss",
+                  "Maven",
+                  "Eclipse"
+                ],
+                [
+                  "AngularJS",
+                  "TypeScript",
+                  "Gulp",
+                  "HTML5",
+                  "LESS",
+                  "Visual Studio 2015"
+                ],
+                [
+                  "Jenkins",
+                  "Nexus",
+                  "TFS 2015"
+                ]
+              ]
             }
           ]
         }
@@ -396,7 +420,7 @@
             "Analyse des applications existantes",
             "Formation sur les applications (autodidacte ou non)",
             "Validation des applications en Oracle 10g",
-            "Test de porbadgee d’instruction Oracle sous MySQL",
+            "Test de portage d’instruction Oracle sous MySQL",
             "Evaluation du cout de migration",
             "Production d’un document de synthèse"
           ],
@@ -485,9 +509,9 @@
       "secteur": "Business intelligence pour les PMI/PME",
       "experiences": [
         {
-          "title": "Mise en place d’un système de versionnement au sein de l’équipe",
+          "title": "Développement d’un module de journalisation pour la partie background de la suite BI for IT",
           "fonctionnels": [
-            "Analyse, conception, maquetbadgee du module",
+            "Analyse, conception, maquettage du module",
             "Rédaction de la spécification fonctionnelle et technique",
             "Développement et test",
             "Mise en production et recette"
@@ -527,7 +551,7 @@
         {
           "title": "Développement d’un module de questionnaire personnalisé pour la suite BI for IT",
           "fonctionnels": [
-            "Analyse, conception, maquetbadgee du module",
+            "Analyse, conception, maquettage du module",
             "Rédaction de la spécification fonctionnelle et technique",
             "Développement de la solution avec un AJAX propriétaire + librairie Prototype",
             "Mise en production et recette"
@@ -706,10 +730,10 @@
           ]
         },
         {
-          "title": "Refonte du site Web de la société",
+          "title": "Conception et développement de modules d'une application libre de gestion de contenu \"Calenco\"",
           "fonctionnels": [
             "Analyse et conception du système de versionnement du contenu",
-            "Maquetbadgee de la solution",
+            "Maquettage de la solution",
             "Développement du système de repositery avec interface graphique"
           ],
           "technos": [
