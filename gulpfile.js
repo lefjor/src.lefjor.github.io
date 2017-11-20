@@ -116,6 +116,7 @@ gulp.task('build:css', function () {
         .pipe($.if(isProd, $.uncss({
             html: ['src/**/*.html'],
             ignore: [
+				new RegExp('.*manageo.*'),
                 new RegExp('.*infotel.*'),
                 new RegExp('.*reactis.*'),
                 new RegExp('.*st.*'),

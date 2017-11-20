@@ -37,6 +37,36 @@
     "environnement": "Environnement technique"
   },
   "entreprises": [
+  {
+      "nom": "Manageo",
+      "codeEntreprise": "manageo",
+      "localite": "Aix-en-provence",
+      "sourceImage": "",
+      "alt": "logo societe Manageo",
+      "type": "",
+      "date": "Depuis Septembre 2017",
+      "secteur": "Traitement de données",
+      "experiences": [
+        {
+          "title": "Développement/maintenance du site Manageo et du module de création de liste entreprise",
+          "fonctionnels": [
+            "Développement et maintenance de l'application"
+          ],
+		"technos": [
+			[
+			  "Java 8",
+			  "Tomcat",
+			  "Maven",
+			  "Netbeans"
+			],
+			[
+			  "Jquery",
+			  "SASS"
+			]
+		  ]
+        }
+      ]
+    },
     {
       "nom": "Infotel",
       "codeEntreprise": "infotel",
@@ -50,7 +80,7 @@
           "clientCourt": "IT-CE",
           "codeEntreprise": "itce",
           "alt": "logo société it-ce",
-          "date": "Depuis Avril 2017",
+          "date": "Avril 2017 - Août 2017",
           "secteur": "Banques et assurances",
           "experiences": [
             {
