@@ -1,4 +1,4 @@
-<div ng-repeat="entreprise in ::$ctrl.entreprises" class="container py-2" ng-class="entreprise.codeEntreprise">
+<div ng-repeat="entreprise in ::$ctrl.entreprises" class="container pt-2" ng-class="entreprise.codeEntreprise">
     <div class="row">
         <div class="col-xs-12 pb-2 mx-auto">
             <img ng-src="img/picto/entreprise/logo-{{::entreprise.codeEntreprise}}.png" alt="{{::alt}}">
@@ -21,7 +21,7 @@
                 <h5>{{::$ctrl.label.secteur}} : {{::mission.secteur}}</h5>
             </div>
             <div class="col-lg-7">
-                <div ng-repeat="exp in ::mission.experiences" class="experience pb-2">
+                <div ng-repeat="exp in ::mission.experiences" class="experience">
                     <experience-component experience="exp"></experience-component>
                 </div>
             </div>

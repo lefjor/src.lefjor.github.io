@@ -6,7 +6,7 @@
     "email": "",
     "phone": "",
     "website": "https://lefjor.github.io",
-    "summary": "Je touche à tout, j'améliore, je répare, je construis, je casse, je refais, je teste je suis ingénieur de dev et alors ? J'aimerais évoluer vers de l'architecture même si au fur et à mesure des missions j'arrive toujours à encadrer des collaborateurs et être référent sur mes projets. Ma recherche se porte sur un cadre international de préférence pour les états unis (USA) ou le royaume-uni (UK). Je parle un anglais plutôt moyen mais bon la faute à qui ? Il faut avoir la chance de pratiquer dans un cadre professionnel to improve our knowledge ! Alors allons de l'avant et tentons notre chance !",
+    "summary": "",
     "location": {
       "address": "",
       "postalCode": "",
@@ -55,6 +55,7 @@
 		"technos": [
 			[
 			  "Java 8",
+              "Elasticsearch",
 			  "Tomcat",
 			  "Maven",
 			  "Netbeans"

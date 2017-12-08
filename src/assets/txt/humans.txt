@@ -4,7 +4,7 @@ Master: Jordan LEFEBVRE.
 
 /* SITE */
                             
-Last update: 2016/14/12
+Last update: 2017/12/08
 Standards: HTML5, CSS3,..
 Components: Boostrap 4, Gulp
 Software: Webstorm
