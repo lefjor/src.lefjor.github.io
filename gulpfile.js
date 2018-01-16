@@ -34,7 +34,7 @@ gulp.task('help', $.taskListing);
 gulp.task('build',
     function () {
         $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'inline:css', 'generate-service-worker');
+        runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'inline:css', 'generate-service-worker');
     });
 
 /**
@@ -42,7 +42,7 @@ gulp.task('build',
  */
 gulp.task('default', function () {
     $.util.log('Environnement : ' + $.util.colors.blue(args.env));
-    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:json', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'watch');
+    runSeq('clean:dist', 'build:css', ['build:img', 'build:ico', 'build:humans', 'build:svg', 'build:template', 'build:manifest', 'browserify'], 'build:index', 'watch');
 });
 
 /**
@@ -93,15 +93,6 @@ gulp.task('browserify', function () {
         .pipe($.if(isProd, $.streamify($.uglify())))
         .pipe($.rename('bundle.js'))
         .pipe(gulp.dest('dist/js'))
-});
-
-/**
- * Minify Json and copy to dist
- */
-gulp.task('build:json', function () {
-    return gulp.src(config.directory.srcJson)
-        .pipe($.if(isProd, $.jsonmin()))
-        .pipe(gulp.dest(config.directory.distJson));
 });
 
 /**
@@ -223,7 +214,7 @@ gulp.task('generate-service-worker', function (callback) {
     var rootDir = 'dist';
 
     swPrecache.write(path.join(rootDir, 'sw.js'), {
-        staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,svg,json}'],
+        staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,svg}'],
         stripPrefix: rootDir,
         navigateFallback: '/',
         runtimeCaching: [{
@@ -242,8 +233,8 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch(config.directory.srcImg, ['build:img']);
     gulp.watch(config.directory.srcIco, ['build:ico']);
     gulp.watch(config.directory.srcJs, ['browserify']);
-    gulp.watch(config.directory.srcJson, ['build:json']);
+    //gulp.watch(config.directory.srcJson, ['build:json']);
     gulp.watch(config.directory.srcManifest, ['build:manifest']);
 
-    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico', './dist/js/**/*.js', './dist/i18n/*.json', './dist/template/**/*.html', './dist/manifest.json'], browserSync.reload);
+    gulp.watch(['./dist/css/**/*.css', './dist/*.html', './dist/img/**/*.png', './dist/img/**/*.ico', './dist/js/**/*.js', './dist/template/**/*.html', './dist/manifest.json'], browserSync.reload);
 });

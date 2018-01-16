@@ -7,7 +7,6 @@
     "srcHumans": "src/assets/txt/**/*.txt",
     "srcManifest" : "src/*.json",
     "srcImg" : "src/img/**/*.+(png|jpg|gif)",
-    "srcJson" : "src/i18n/*.json",
     "srcSvg" : "src/img/**/*.+(svg)",
     "srcIco" : "src/img/**/*.ico",
     "srcJs" : "src/js/**/*.js",
@@ -15,7 +14,6 @@
     "distManifest": "dist",
     "distHumans": "dist/assets/txt/",
     "distImg" : "dist/img",
-    "distJson" : "dist/i18n",
     "distTemplate" : "dist/template"
   }
 }
